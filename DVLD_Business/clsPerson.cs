@@ -15,7 +15,7 @@ namespace DVLD_Business
         public string SecondName { get; set; }
         public string ThirdName { get; set; }
         public string LastName { get; set; }
-        public string FullName 
+        public string FullName
         {
             get
             {
@@ -32,7 +32,7 @@ namespace DVLD_Business
         public int NationalityCountryID { get; set; }
 
         public clsCountry CountryInfo;
-        
+
         private string _ImagePath;
         public string ImagePath
         {
@@ -60,7 +60,7 @@ namespace DVLD_Business
         }
 
         private clsPerson(
-            int PersonID, string NationalNo, 
+            int PersonID, string NationalNo,
             string FirstName, string SecondName, string ThirdName, string LastName,
             DateTime DateOfBirth, bool Gender, string Address, string Phone,
             string Email, int NationalityCountryID, string ImagePath)
@@ -151,7 +151,7 @@ namespace DVLD_Business
 
         public bool Save()
         {
-            switch(Mode)
+            switch (Mode)
             {
                 case enMode.AddNew:
                     if (_AddNewPerson())

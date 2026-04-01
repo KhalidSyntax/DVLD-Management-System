@@ -165,3 +165,31 @@ appsettings.Development.json
 # =========================
 
 *.rsuser
+
+# Visual Studio Code
+.vscode/
+
+# Rider cache
+.idea/
+
+# dotnet
+*.runtimeconfig.dev.json
+*.deps.json
+
+# logs
+*.log
+logs/
+
+# coverage
+coverage/
+
+Database Design/
+Icons/
+
+DVLD Database.png
+DVLD_ERD.png
+DVLD_RS.png
+ERD Database.png
+FullDatabaseSchema.sql
+Requirements.pdf
+Course-19.pdf

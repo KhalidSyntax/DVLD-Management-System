@@ -20,7 +20,7 @@ namespace DVLD_Business
 
         public clsPerson PersonInfo
         {
-            get 
+            get
             {
                 if (_PersonInfo == null)
                     _PersonInfo = clsPerson.Find(this.PersonID);
@@ -112,7 +112,7 @@ namespace DVLD_Business
             if (string.IsNullOrWhiteSpace(NewPassword))
                 return false;
 
-            if(clsUserDataAccess.ChangePassword(this.UserID, NewPassword))
+            if (clsUserDataAccess.ChangePassword(this.UserID, NewPassword))
             {
                 this.Password = NewPassword;
                 return true;

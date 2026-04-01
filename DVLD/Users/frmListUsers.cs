@@ -2,6 +2,7 @@
 using DVLD_Business;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace DVLD.User
@@ -27,6 +28,15 @@ namespace DVLD.User
         {
             _RefreshUsersList();
             cbFilterBy.SelectedIndex = 0;
+
+            // Header
+            dgvUsers.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 12, FontStyle.Bold);
+            dgvUsers.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+
+            // Cells
+            dgvUsers.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11, FontStyle.Regular);
 
             if (dgvUsers.Rows.Count > 0)
             {

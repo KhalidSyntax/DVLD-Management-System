@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblRecordsCount = new System.Windows.Forms.Label();
             this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.lbl1 = new System.Windows.Forms.Label();
             this.cmsUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.miShowDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.miAddNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.miEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.miDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.miChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.miSendEmail = new System.Windows.Forms.ToolStripMenuItem();
-            this.miPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.cbIsActive = new System.Windows.Forms.ComboBox();
             this.btnAddNewUser = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbIsActive = new System.Windows.Forms.ComboBox();
+            this.miShowDetails = new System.Windows.Forms.ToolStripMenuItem();
+            this.miAddNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.miEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.miChangePassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.miSendEmail = new System.Windows.Forms.ToolStripMenuItem();
+            this.miPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -131,102 +131,45 @@
             this.cmsUsers.Name = "contextMenuStrip1";
             this.cmsUsers.Size = new System.Drawing.Size(185, 282);
             // 
-            // miShowDetails
-            // 
-            this.miShowDetails.Image = global::DVLD.Properties.Resources.PersonDetails_32;
-            this.miShowDetails.Name = "miShowDetails";
-            this.miShowDetails.Size = new System.Drawing.Size(184, 38);
-            this.miShowDetails.Text = "Show Details";
-            this.miShowDetails.Click += new System.EventHandler(this.miShowDetails_Click);
-            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
-            // 
-            // miAddNew
-            // 
-            this.miAddNew.Image = global::DVLD.Properties.Resources.Add_New_User_32;
-            this.miAddNew.Name = "miAddNew";
-            this.miAddNew.Size = new System.Drawing.Size(184, 38);
-            this.miAddNew.Text = "Add New User";
-            this.miAddNew.Click += new System.EventHandler(this.miAddNew_Click);
-            // 
-            // miEdit
-            // 
-            this.miEdit.Image = global::DVLD.Properties.Resources.edit_32;
-            this.miEdit.Name = "miEdit";
-            this.miEdit.Size = new System.Drawing.Size(184, 38);
-            this.miEdit.Text = "Edit";
-            this.miEdit.Click += new System.EventHandler(this.miEdit_Click);
-            // 
-            // miDelete
-            // 
-            this.miDelete.Image = global::DVLD.Properties.Resources.Delete_32;
-            this.miDelete.Name = "miDelete";
-            this.miDelete.Size = new System.Drawing.Size(184, 38);
-            this.miDelete.Text = "Delete";
-            this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
-            // 
-            // miChangePassword
-            // 
-            this.miChangePassword.Image = global::DVLD.Properties.Resources.Password_32;
-            this.miChangePassword.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.miChangePassword.Name = "miChangePassword";
-            this.miChangePassword.Size = new System.Drawing.Size(184, 38);
-            this.miChangePassword.Text = "Change Password";
-            this.miChangePassword.Click += new System.EventHandler(this.miChangePassword_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(181, 6);
             // 
-            // miSendEmail
-            // 
-            this.miSendEmail.Image = global::DVLD.Properties.Resources.send_email_32;
-            this.miSendEmail.Name = "miSendEmail";
-            this.miSendEmail.Size = new System.Drawing.Size(184, 38);
-            this.miSendEmail.Text = "Send Email";
-            this.miSendEmail.Click += new System.EventHandler(this.miSendEmail_Click);
-            // 
-            // miPhoneCall
-            // 
-            this.miPhoneCall.Image = global::DVLD.Properties.Resources.call_32;
-            this.miPhoneCall.Name = "miPhoneCall";
-            this.miPhoneCall.Size = new System.Drawing.Size(184, 38);
-            this.miPhoneCall.Text = "Phone Call";
-            this.miPhoneCall.Click += new System.EventHandler(this.miPhoneCall_Click);
-            // 
             // dgvUsers
             // 
             this.dgvUsers.AllowUserToAddRows = false;
             this.dgvUsers.AllowUserToDeleteRows = false;
             this.dgvUsers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvUsers.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsers.ContextMenuStrip = this.cmsUsers;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUsers.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvUsers.EnableHeadersVisualStyles = false;
             this.dgvUsers.Location = new System.Drawing.Point(25, 198);
             this.dgvUsers.MultiSelect = false;
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
-            this.dgvUsers.RowHeadersVisible = false;
             this.dgvUsers.RowTemplate.Height = 30;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsers.Size = new System.Drawing.Size(649, 228);
@@ -243,6 +186,20 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Manage Users";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // cbIsActive
+            // 
+            this.cbIsActive.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbIsActive.FormattingEnabled = true;
+            this.cbIsActive.Items.AddRange(new object[] {
+            "All",
+            "Yes",
+            "No"});
+            this.cbIsActive.Location = new System.Drawing.Point(244, 163);
+            this.cbIsActive.Name = "cbIsActive";
+            this.cbIsActive.Size = new System.Drawing.Size(138, 25);
+            this.cbIsActive.TabIndex = 3;
+            this.cbIsActive.SelectedIndexChanged += new System.EventHandler(this.cbIsActive_SelectedIndexChanged);
             // 
             // btnAddNewUser
             // 
@@ -289,19 +246,62 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // cbIsActive
+            // miShowDetails
             // 
-            this.cbIsActive.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbIsActive.FormattingEnabled = true;
-            this.cbIsActive.Items.AddRange(new object[] {
-            "All",
-            "Yes",
-            "No"});
-            this.cbIsActive.Location = new System.Drawing.Point(244, 163);
-            this.cbIsActive.Name = "cbIsActive";
-            this.cbIsActive.Size = new System.Drawing.Size(138, 25);
-            this.cbIsActive.TabIndex = 3;
-            this.cbIsActive.SelectedIndexChanged += new System.EventHandler(this.cbIsActive_SelectedIndexChanged);
+            this.miShowDetails.Image = global::DVLD.Properties.Resources.PersonDetails_32;
+            this.miShowDetails.Name = "miShowDetails";
+            this.miShowDetails.Size = new System.Drawing.Size(184, 38);
+            this.miShowDetails.Text = "Show Details";
+            this.miShowDetails.Click += new System.EventHandler(this.miShowDetails_Click);
+            // 
+            // miAddNew
+            // 
+            this.miAddNew.Image = global::DVLD.Properties.Resources.Add_New_User_32;
+            this.miAddNew.Name = "miAddNew";
+            this.miAddNew.Size = new System.Drawing.Size(184, 38);
+            this.miAddNew.Text = "Add New User";
+            this.miAddNew.Click += new System.EventHandler(this.miAddNew_Click);
+            // 
+            // miEdit
+            // 
+            this.miEdit.Image = global::DVLD.Properties.Resources.edit_32;
+            this.miEdit.Name = "miEdit";
+            this.miEdit.Size = new System.Drawing.Size(184, 38);
+            this.miEdit.Text = "Edit";
+            this.miEdit.Click += new System.EventHandler(this.miEdit_Click);
+            // 
+            // miDelete
+            // 
+            this.miDelete.Image = global::DVLD.Properties.Resources.Delete_32;
+            this.miDelete.Name = "miDelete";
+            this.miDelete.Size = new System.Drawing.Size(184, 38);
+            this.miDelete.Text = "Delete";
+            this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
+            // 
+            // miChangePassword
+            // 
+            this.miChangePassword.Image = global::DVLD.Properties.Resources.Password_32;
+            this.miChangePassword.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.miChangePassword.Name = "miChangePassword";
+            this.miChangePassword.Size = new System.Drawing.Size(184, 38);
+            this.miChangePassword.Text = "Change Password";
+            this.miChangePassword.Click += new System.EventHandler(this.miChangePassword_Click);
+            // 
+            // miSendEmail
+            // 
+            this.miSendEmail.Image = global::DVLD.Properties.Resources.send_email_32;
+            this.miSendEmail.Name = "miSendEmail";
+            this.miSendEmail.Size = new System.Drawing.Size(184, 38);
+            this.miSendEmail.Text = "Send Email";
+            this.miSendEmail.Click += new System.EventHandler(this.miSendEmail_Click);
+            // 
+            // miPhoneCall
+            // 
+            this.miPhoneCall.Image = global::DVLD.Properties.Resources.call_32;
+            this.miPhoneCall.Name = "miPhoneCall";
+            this.miPhoneCall.Size = new System.Drawing.Size(184, 38);
+            this.miPhoneCall.Text = "Phone Call";
+            this.miPhoneCall.Click += new System.EventHandler(this.miPhoneCall_Click);
             // 
             // frmListUsers
             // 

@@ -1,7 +1,8 @@
-﻿using System;
-using System.IO;
+﻿using DVLD_Business;
+using System;
 using System.Data;
-using DVLD_Business;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace DVLD.People
@@ -41,6 +42,15 @@ namespace DVLD.People
         {
             _RefreshPeopleList();
             cbFilterBy.SelectedIndex = 0;
+
+            // Header
+            dgvPeople.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 12, FontStyle.Bold);
+            dgvPeople.ColumnHeadersDefaultCellStyle.BackColor = Color.LightGray;
+
+            // Cells
+            dgvPeople.DefaultCellStyle.Font =
+                new Font("Segoe UI", 11, FontStyle.Regular);
 
             lblRecordsCount.Text = dgvPeople.Rows.Count.ToString();
 

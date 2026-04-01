@@ -3,6 +3,7 @@ using DVLD.User;
 using DVLD.Login;
 using DVLD.People;
 using DVLD.Classes;
+using DVLD.Applications;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -114,6 +115,11 @@ namespace DVLD
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void manageApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmListApplicationType());
         }
     }
 }

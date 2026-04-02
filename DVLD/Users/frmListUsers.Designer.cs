@@ -37,8 +37,15 @@
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.lbl1 = new System.Windows.Forms.Label();
             this.cmsUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.miShowDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.miAddNew = new System.Windows.Forms.ToolStripMenuItem();
+            this.miEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.miChangePassword = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.miSendEmail = new System.Windows.Forms.ToolStripMenuItem();
+            this.miPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.cbIsActive = new System.Windows.Forms.ComboBox();
@@ -46,13 +53,6 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAddPerson = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.miShowDetails = new System.Windows.Forms.ToolStripMenuItem();
-            this.miAddNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.miEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.miDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.miChangePassword = new System.Windows.Forms.ToolStripMenuItem();
-            this.miSendEmail = new System.Windows.Forms.ToolStripMenuItem();
-            this.miPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
             this.cmsUsers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -131,15 +131,72 @@
             this.cmsUsers.Name = "contextMenuStrip1";
             this.cmsUsers.Size = new System.Drawing.Size(185, 282);
             // 
+            // miShowDetails
+            // 
+            this.miShowDetails.Image = global::DVLD.Properties.Resources.PersonDetails_32;
+            this.miShowDetails.Name = "miShowDetails";
+            this.miShowDetails.Size = new System.Drawing.Size(184, 38);
+            this.miShowDetails.Text = "Show Details";
+            this.miShowDetails.Click += new System.EventHandler(this.miShowDetails_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
             // 
+            // miAddNew
+            // 
+            this.miAddNew.Image = global::DVLD.Properties.Resources.Add_New_User_32;
+            this.miAddNew.Name = "miAddNew";
+            this.miAddNew.Size = new System.Drawing.Size(184, 38);
+            this.miAddNew.Text = "Add New User";
+            this.miAddNew.Click += new System.EventHandler(this.miAddNew_Click);
+            // 
+            // miEdit
+            // 
+            this.miEdit.Image = global::DVLD.Properties.Resources.edit_32;
+            this.miEdit.Name = "miEdit";
+            this.miEdit.Size = new System.Drawing.Size(184, 38);
+            this.miEdit.Text = "Edit";
+            this.miEdit.Click += new System.EventHandler(this.miEdit_Click);
+            // 
+            // miDelete
+            // 
+            this.miDelete.Image = global::DVLD.Properties.Resources.Delete_32;
+            this.miDelete.Name = "miDelete";
+            this.miDelete.Size = new System.Drawing.Size(184, 38);
+            this.miDelete.Text = "Delete";
+            this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
+            // 
+            // miChangePassword
+            // 
+            this.miChangePassword.Image = global::DVLD.Properties.Resources.Password_32;
+            this.miChangePassword.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.miChangePassword.Name = "miChangePassword";
+            this.miChangePassword.Size = new System.Drawing.Size(184, 38);
+            this.miChangePassword.Text = "Change Password";
+            this.miChangePassword.Click += new System.EventHandler(this.miChangePassword_Click);
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(181, 6);
+            // 
+            // miSendEmail
+            // 
+            this.miSendEmail.Image = global::DVLD.Properties.Resources.send_email_32;
+            this.miSendEmail.Name = "miSendEmail";
+            this.miSendEmail.Size = new System.Drawing.Size(184, 38);
+            this.miSendEmail.Text = "Send Email";
+            this.miSendEmail.Click += new System.EventHandler(this.miSendEmail_Click);
+            // 
+            // miPhoneCall
+            // 
+            this.miPhoneCall.Image = global::DVLD.Properties.Resources.call_32;
+            this.miPhoneCall.Name = "miPhoneCall";
+            this.miPhoneCall.Size = new System.Drawing.Size(184, 38);
+            this.miPhoneCall.Text = "Phone Call";
+            this.miPhoneCall.Click += new System.EventHandler(this.miPhoneCall_Click);
             // 
             // dgvUsers
             // 
@@ -246,67 +303,11 @@
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
             // 
-            // miShowDetails
-            // 
-            this.miShowDetails.Image = global::DVLD.Properties.Resources.PersonDetails_32;
-            this.miShowDetails.Name = "miShowDetails";
-            this.miShowDetails.Size = new System.Drawing.Size(184, 38);
-            this.miShowDetails.Text = "Show Details";
-            this.miShowDetails.Click += new System.EventHandler(this.miShowDetails_Click);
-            // 
-            // miAddNew
-            // 
-            this.miAddNew.Image = global::DVLD.Properties.Resources.Add_New_User_32;
-            this.miAddNew.Name = "miAddNew";
-            this.miAddNew.Size = new System.Drawing.Size(184, 38);
-            this.miAddNew.Text = "Add New User";
-            this.miAddNew.Click += new System.EventHandler(this.miAddNew_Click);
-            // 
-            // miEdit
-            // 
-            this.miEdit.Image = global::DVLD.Properties.Resources.edit_32;
-            this.miEdit.Name = "miEdit";
-            this.miEdit.Size = new System.Drawing.Size(184, 38);
-            this.miEdit.Text = "Edit";
-            this.miEdit.Click += new System.EventHandler(this.miEdit_Click);
-            // 
-            // miDelete
-            // 
-            this.miDelete.Image = global::DVLD.Properties.Resources.Delete_32;
-            this.miDelete.Name = "miDelete";
-            this.miDelete.Size = new System.Drawing.Size(184, 38);
-            this.miDelete.Text = "Delete";
-            this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
-            // 
-            // miChangePassword
-            // 
-            this.miChangePassword.Image = global::DVLD.Properties.Resources.Password_32;
-            this.miChangePassword.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.miChangePassword.Name = "miChangePassword";
-            this.miChangePassword.Size = new System.Drawing.Size(184, 38);
-            this.miChangePassword.Text = "Change Password";
-            this.miChangePassword.Click += new System.EventHandler(this.miChangePassword_Click);
-            // 
-            // miSendEmail
-            // 
-            this.miSendEmail.Image = global::DVLD.Properties.Resources.send_email_32;
-            this.miSendEmail.Name = "miSendEmail";
-            this.miSendEmail.Size = new System.Drawing.Size(184, 38);
-            this.miSendEmail.Text = "Send Email";
-            this.miSendEmail.Click += new System.EventHandler(this.miSendEmail_Click);
-            // 
-            // miPhoneCall
-            // 
-            this.miPhoneCall.Image = global::DVLD.Properties.Resources.call_32;
-            this.miPhoneCall.Name = "miPhoneCall";
-            this.miPhoneCall.Size = new System.Drawing.Size(184, 38);
-            this.miPhoneCall.Text = "Phone Call";
-            this.miPhoneCall.Click += new System.EventHandler(this.miPhoneCall_Click);
-            // 
             // frmListUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(707, 485);
             this.Controls.Add(this.btnAddNewUser);
             this.Controls.Add(this.lblRecordsCount);

@@ -33,6 +33,7 @@
             this.pbLogo = new System.Windows.Forms.PictureBox();
             this.applicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.manageApplicationTypeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.peopleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.driversToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -80,13 +81,14 @@
             // 
             this.applicationsToolStripMenuItem.BackColor = System.Drawing.Color.White;
             this.applicationsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.manageApplicationTypeToolStripMenuItem});
+            this.manageApplicationTypeToolStripMenuItem,
+            this.manaToolStripMenuItem});
             this.applicationsToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.applicationsToolStripMenuItem.Image = global::DVLD.Properties.Resources.Applications_64;
             this.applicationsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.applicationsToolStripMenuItem.Name = "applicationsToolStripMenuItem";
-            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(161, 65);
-            this.applicationsToolStripMenuItem.Text = "Applications";
+            this.applicationsToolStripMenuItem.Size = new System.Drawing.Size(155, 65);
+            this.applicationsToolStripMenuItem.Text = "Application";
             // 
             // manageApplicationTypeToolStripMenuItem
             // 
@@ -97,6 +99,15 @@
             this.manageApplicationTypeToolStripMenuItem.Size = new System.Drawing.Size(281, 70);
             this.manageApplicationTypeToolStripMenuItem.Text = "Manage Application Type";
             this.manageApplicationTypeToolStripMenuItem.Click += new System.EventHandler(this.manageApplicationTypeToolStripMenuItem_Click);
+            // 
+            // manaToolStripMenuItem
+            // 
+            this.manaToolStripMenuItem.Image = global::DVLD.Properties.Resources.Test_Type_64;
+            this.manaToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.manaToolStripMenuItem.Name = "manaToolStripMenuItem";
+            this.manaToolStripMenuItem.Size = new System.Drawing.Size(281, 70);
+            this.manaToolStripMenuItem.Text = "Manage Test Types";
+            this.manaToolStripMenuItem.Click += new System.EventHandler(this.manaToolStripMenuItem_Click);
             // 
             // peopleToolStripMenuItem
             // 
@@ -213,5 +224,6 @@
         private System.Windows.Forms.ToolStripMenuItem signOutToolStripMenuItem;
         private System.Windows.Forms.PictureBox pbLogo;
         private System.Windows.Forms.ToolStripMenuItem manageApplicationTypeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem manaToolStripMenuItem;
     }
 }

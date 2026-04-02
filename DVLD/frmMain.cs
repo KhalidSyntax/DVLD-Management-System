@@ -3,6 +3,7 @@ using DVLD.User;
 using DVLD.Login;
 using DVLD.People;
 using DVLD.Classes;
+using DVLD.Test;
 using DVLD.Applications;
 using System.Drawing;
 using System.Windows.Forms;
@@ -120,6 +121,11 @@ namespace DVLD
         private void manageApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenForm(new frmListApplicationType());
+        }
+
+        private void manaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmListTestTypes());
         }
     }
 }

@@ -40,6 +40,14 @@ namespace DVLD.Applications
                 return;
             }
 
+            if (txtTitle.Text.Trim() == _ApplicationType.ApplicationTypeTitle &&
+                Convert.ToSingle(txtFees.Text.Trim()) == _ApplicationType.ApplicationTypeFees)
+            {
+                MessageBox.Show("No changes made.");
+                this.Close();
+                return;
+            }
+
             if (MessageBox.Show(
                     "Do you want to save the changes?",
                     "Confirm",
@@ -115,10 +123,13 @@ namespace DVLD.Applications
 
         private void txtFees_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
+            if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar))
+                return;
+
+            if (e.KeyChar == '.' && !txtFees.Text.Contains("."))
+                return;
+
+            e.Handled = true;
         }
     }
 }

@@ -178,12 +178,12 @@ namespace DVLD_Business
             return clsPersonDataAccess.GetAllPeople();
         }
 
-        public static bool isPersonExist(int PersonID)
+        public static bool IsPersonExist(int PersonID)
         {
             return clsPersonDataAccess.IsPersonExist(PersonID);
         }
 
-        public static bool isPersonExist(string NationalNo)
+        public static bool IsPersonExist(string NationalNo)
         {
             return clsPersonDataAccess.IsPersonExist(NationalNo);
         }

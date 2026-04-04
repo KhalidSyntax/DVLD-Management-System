@@ -151,7 +151,7 @@ namespace DVLD.User
 
             if(_Mode == enMode.AddNew)
             {
-                if(clsUser.isUserExist(txtUserName.Text.Trim()))
+                if(clsUser.IsUserExist(txtUserName.Text.Trim()))
                 {
                     e.Cancel = true;
                     epUser.SetError(txtUserName, "username is used by another user");
@@ -164,7 +164,7 @@ namespace DVLD.User
             {
                 if(_User.UserName != txtUserName.Text.Trim())
                 {
-                    if (clsUser.isUserExist(txtUserName.Text.Trim()))
+                    if (clsUser.IsUserExist(txtUserName.Text.Trim()))
                     {
                         e.Cancel = true;
                         epUser.SetError(txtUserName, "username is used by another user");

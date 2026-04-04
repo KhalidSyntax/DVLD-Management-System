@@ -149,12 +149,12 @@ namespace DVLD_Business
             return clsUserDataAccess.DeleteUser(UserID);
         }
 
-        public static bool isUserExist(int UserID)
+        public static bool IsUserExist(int UserID)
         {
             return clsUserDataAccess.IsUserExist(UserID);
         }
 
-        public static bool isUserExist(string UserName)
+        public static bool IsUserExist(string UserName)
         {
             return clsUserDataAccess.IsUserExist(UserName);
         }

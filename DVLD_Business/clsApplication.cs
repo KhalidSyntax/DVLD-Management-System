@@ -6,8 +6,8 @@ namespace DVLD_Business
 {
     public class clsApplication
     {
-        public enum enMode { AddNew = 0, Update = 1 };
-        public enMode Mode = enMode.AddNew;
+        protected enum enMode { AddNew = 0, Update = 1 };
+        protected enMode Mode = enMode.AddNew;
 
         public enum enApplicationType
         {
@@ -41,7 +41,7 @@ namespace DVLD_Business
             get { return PersonInfo?.FullName ?? ""; }
         }
 
-        public DateTime ApplicationDate { get; private set; }
+        public DateTime ApplicationDate { get; protected set; }
         public int ApplicationTypeID { get; set; }
 
 
@@ -58,7 +58,7 @@ namespace DVLD_Business
             get { return ApplicationStatus.ToString(); }
         }
 
-        public DateTime LastStatusDate { get; private set; }
+        public DateTime LastStatusDate { get; protected set; }
         public float PaidFees { get; set; }
         public int CreatedByUserID { get; set; }
 
@@ -84,7 +84,7 @@ namespace DVLD_Business
             Mode = enMode.AddNew;
         }
 
-        private clsApplication(
+        protected clsApplication(
             int ApplicationID,
             int ApplicantPersonID,
             DateTime ApplicationDate,
@@ -171,7 +171,7 @@ namespace DVLD_Business
                 this.CreatedByUserID);
         }
 
-        public bool Save()
+        public virtual bool Save()
         {
             switch (Mode)
             {

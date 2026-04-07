@@ -4,7 +4,7 @@ using System.Data.SqlClient;
 
 namespace DVLD_DataAccess
 {
-    public class clsTestDataAccess
+    public class clsTestTypeDataAccess
     {
         public static bool GetTestTypeInfoByID(
         int TestTypeID,

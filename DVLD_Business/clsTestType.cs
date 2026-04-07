@@ -40,7 +40,7 @@ namespace DVLD_Business
             string TestTypeTitle = "", TestTypeDescription = "";
             float TestTypeFees = 0;
 
-            if (clsTestDataAccess.GetTestTypeInfoByID((int)TestTypeID, ref TestTypeTitle, ref TestTypeDescription, ref TestTypeFees))
+            if (clsTestTypeDataAccess.GetTestTypeInfoByID((int)TestTypeID, ref TestTypeTitle, ref TestTypeDescription, ref TestTypeFees))
                 return new clsTestType(TestTypeID, TestTypeTitle, TestTypeDescription, TestTypeFees);
             else
                 return null;
@@ -48,7 +48,7 @@ namespace DVLD_Business
 
         private bool _AddNewTestType()
         {
-            this.TestTypeID = (enTestType)clsTestDataAccess.AddNewTestType(
+            this.TestTypeID = (enTestType)clsTestTypeDataAccess.AddNewTestType(
                 this.TestTypeTitle,
                 this.TestTypeDescription,
                 this.TestTypeFees);
@@ -58,7 +58,7 @@ namespace DVLD_Business
 
         private bool _UpdateTestType()
         {
-            return clsTestDataAccess.UpdateTestType(
+            return clsTestTypeDataAccess.UpdateTestType(
                 (int)this.TestTypeID,
                 this.TestTypeTitle,
                 this.TestTypeDescription,
@@ -86,7 +86,7 @@ namespace DVLD_Business
 
         public static DataTable GetAllTestTypes()
         {
-            return clsTestDataAccess.GetAllTestTypes();
+            return clsTestTypeDataAccess.GetAllTestTypes();
         }
     }
 }

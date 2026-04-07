@@ -123,7 +123,7 @@ namespace DVLD
             OpenForm(new frmListApplicationType());
         }
 
-        private void manaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenForm(new frmListTestTypes());
         }

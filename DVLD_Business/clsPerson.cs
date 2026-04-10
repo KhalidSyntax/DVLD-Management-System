@@ -31,7 +31,17 @@ namespace DVLD_Business
         public string Email { get; set; }
         public int NationalityCountryID { get; set; }
 
-        public clsCountry CountryInfo;
+        private clsCountry _CountryInfo;
+        public clsCountry CountryInfo
+        {
+            get
+            {
+                if (_CountryInfo == null)
+                    _CountryInfo = clsCountry.Find(NationalityCountryID);
+
+                return _CountryInfo;
+            }
+        }
 
         private string _ImagePath;
         public string ImagePath
@@ -77,7 +87,6 @@ namespace DVLD_Business
             this.Phone = Phone;
             this.Email = Email;
             this.NationalityCountryID = NationalityCountryID;
-            this.CountryInfo = clsCountry.Find(NationalityCountryID);
             this.ImagePath = ImagePath;
 
             Mode = enMode.Update;

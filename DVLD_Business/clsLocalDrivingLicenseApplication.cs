@@ -8,7 +8,18 @@ namespace DVLD_Business
     {
         public int LocalDrivingLicenseApplicationID { get; set; }
         public int LicenseClassID { get; set; }
-        public clsLicenseClass LicenseClassInfo;
+
+        private clsLicenseClass _LicenseClassInfo;
+        public clsLicenseClass LicenseClassInfo
+        {
+            get
+            {
+                if (_LicenseClassInfo == null)
+                    _LicenseClassInfo = clsLicenseClass.Find(LicenseClassID);
+
+                return _LicenseClassInfo;
+            }
+        }
 
         public string PersonFullName
         {
@@ -47,7 +58,6 @@ namespace DVLD_Business
         {
             this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
             this.LicenseClassID = LicenseClasseID;
-            this.LicenseClassInfo = clsLicenseClass.Find(LicenseClassID);
 
             Mode = enMode.Update;
         }
@@ -123,8 +133,23 @@ namespace DVLD_Business
                 this.LicenseClassID);
         }
 
+        public bool IsApplicantOldEnough()
+        {
+            int age = DateTime.Now.Year - PersonInfo.DateOfBirth.Year;
+
+            if (PersonInfo.DateOfBirth > DateTime.Now.AddYears(-age))
+                age--;
+
+            int minimumAge = LicenseClassInfo.MinimumAllowedAge;
+
+            return age >= minimumAge;
+        }
+
         public override bool Save()
         {
+            if (!IsApplicantOldEnough())
+                return false;
+
             bool isNew = (Mode == enMode.AddNew);
 
             if (!base.Save())

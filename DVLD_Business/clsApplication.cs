@@ -29,11 +29,16 @@ namespace DVLD_Business
 
         public int ApplicationID { get; set; }
         public int ApplicantPersonID { get; set; }
+
+        private clsPerson _PersonInfo;
         public clsPerson PersonInfo
         {
             get
             {
-                return clsPerson.Find(ApplicantPersonID);
+                if (_PersonInfo == null)
+                    _PersonInfo = clsPerson.Find(ApplicantPersonID);
+
+                return _PersonInfo;
             }
         }
         public string ApplicantFullName
@@ -45,13 +50,18 @@ namespace DVLD_Business
         public int ApplicationTypeID { get; set; }
 
 
+        private clsApplicationType _ApplicationTypeInfo;
         public clsApplicationType ApplicationTypeInfo
         {
             get
             {
-                return clsApplicationType.Find(ApplicationTypeID);
+                if (_ApplicationTypeInfo == null)
+                    _ApplicationTypeInfo = clsApplicationType.Find(ApplicationTypeID);
+
+                return _ApplicationTypeInfo;
             }
         }
+
         public enApplicationStatus ApplicationStatus { get; set; }
         public string StatusText
         {
@@ -62,11 +72,16 @@ namespace DVLD_Business
         public float PaidFees { get; set; }
         public int CreatedByUserID { get; set; }
 
+        private clsUser _CreatedByUserInfo;
+
         public clsUser CreatedByUserInfo
         {
             get
             {
-                return clsUser.FindByUserID(CreatedByUserID);
+                if (_CreatedByUserInfo == null)
+                    _CreatedByUserInfo = clsUser.FindByUserID(CreatedByUserID);
+
+                return _CreatedByUserInfo;
             }
         }
 

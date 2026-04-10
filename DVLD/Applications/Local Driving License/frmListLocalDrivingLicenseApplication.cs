@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace DVLD.Applications.Local_Driving_License
 {
-    public partial class frmAddUpdateLocalDrivingLicense : Form
+    public partial class frmListLocalDrivingLicenseApplications : Form
     {
-        public frmAddUpdateLocalDrivingLicense()
+        public frmListLocalDrivingLicenseApplications()
         {
             InitializeComponent();
         }

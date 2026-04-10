@@ -1,10 +1,11 @@
-﻿using System;
-using DVLD.User;
+﻿using DVLD.Applications;
+using DVLD.Applications.Local_Driving_License;
+using DVLD.Classes;
 using DVLD.Login;
 using DVLD.People;
-using DVLD.Classes;
 using DVLD.Test;
-using DVLD.Applications;
+using DVLD.User;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -126,6 +127,16 @@ namespace DVLD
         private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenForm(new frmListTestTypes());
+        }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmAddUpdateLocalDrivingLicenseApplication());
+        }
+
+        private void localDrivingLicenseApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmListLocalDrivingLicenseApplications());
         }
     }
 }

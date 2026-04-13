@@ -71,7 +71,7 @@
             // 
             // txtFilterValue
             // 
-            this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilterValue.Location = new System.Drawing.Point(242, 162);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(188, 25);
@@ -91,7 +91,7 @@
             // 
             // cbFilterBy
             // 
-            this.cbFilterBy.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFilterBy.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
             "None",
@@ -129,72 +129,79 @@
             this.miSendEmail,
             this.miPhoneCall});
             this.cmsUsers.Name = "contextMenuStrip1";
-            this.cmsUsers.Size = new System.Drawing.Size(185, 282);
+            this.cmsUsers.Size = new System.Drawing.Size(196, 282);
             // 
             // miShowDetails
             // 
             this.miShowDetails.Image = global::DVLD.Properties.Resources.PersonDetails_32;
+            this.miShowDetails.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miShowDetails.Name = "miShowDetails";
-            this.miShowDetails.Size = new System.Drawing.Size(184, 38);
+            this.miShowDetails.Size = new System.Drawing.Size(195, 38);
             this.miShowDetails.Text = "Show Details";
             this.miShowDetails.Click += new System.EventHandler(this.miShowDetails_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(181, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(192, 6);
             // 
             // miAddNew
             // 
             this.miAddNew.Image = global::DVLD.Properties.Resources.Add_New_User_32;
+            this.miAddNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miAddNew.Name = "miAddNew";
-            this.miAddNew.Size = new System.Drawing.Size(184, 38);
+            this.miAddNew.Size = new System.Drawing.Size(195, 38);
             this.miAddNew.Text = "Add New User";
             this.miAddNew.Click += new System.EventHandler(this.miAddNew_Click);
             // 
             // miEdit
             // 
             this.miEdit.Image = global::DVLD.Properties.Resources.edit_32;
+            this.miEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miEdit.Name = "miEdit";
-            this.miEdit.Size = new System.Drawing.Size(184, 38);
+            this.miEdit.Size = new System.Drawing.Size(195, 38);
             this.miEdit.Text = "Edit";
             this.miEdit.Click += new System.EventHandler(this.miEdit_Click);
             // 
             // miDelete
             // 
             this.miDelete.Image = global::DVLD.Properties.Resources.Delete_32;
+            this.miDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miDelete.Name = "miDelete";
-            this.miDelete.Size = new System.Drawing.Size(184, 38);
+            this.miDelete.Size = new System.Drawing.Size(195, 38);
             this.miDelete.Text = "Delete";
             this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
             // 
             // miChangePassword
             // 
+            this.miChangePassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.miChangePassword.Image = global::DVLD.Properties.Resources.Password_32;
             this.miChangePassword.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miChangePassword.Name = "miChangePassword";
-            this.miChangePassword.Size = new System.Drawing.Size(184, 38);
+            this.miChangePassword.Size = new System.Drawing.Size(195, 38);
             this.miChangePassword.Text = "Change Password";
             this.miChangePassword.Click += new System.EventHandler(this.miChangePassword_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(181, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(192, 6);
             // 
             // miSendEmail
             // 
             this.miSendEmail.Image = global::DVLD.Properties.Resources.send_email_32;
+            this.miSendEmail.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miSendEmail.Name = "miSendEmail";
-            this.miSendEmail.Size = new System.Drawing.Size(184, 38);
+            this.miSendEmail.Size = new System.Drawing.Size(195, 38);
             this.miSendEmail.Text = "Send Email";
             this.miSendEmail.Click += new System.EventHandler(this.miSendEmail_Click);
             // 
             // miPhoneCall
             // 
             this.miPhoneCall.Image = global::DVLD.Properties.Resources.call_32;
+            this.miPhoneCall.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miPhoneCall.Name = "miPhoneCall";
-            this.miPhoneCall.Size = new System.Drawing.Size(184, 38);
+            this.miPhoneCall.Size = new System.Drawing.Size(195, 38);
             this.miPhoneCall.Text = "Phone Call";
             this.miPhoneCall.Click += new System.EventHandler(this.miPhoneCall_Click);
             // 
@@ -246,7 +253,7 @@
             // 
             // cbIsActive
             // 
-            this.cbIsActive.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbIsActive.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIsActive.FormattingEnabled = true;
             this.cbIsActive.Items.AddRange(new object[] {
             "All",

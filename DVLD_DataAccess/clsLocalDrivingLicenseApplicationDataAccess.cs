@@ -10,7 +10,7 @@ namespace DVLD_DataAccess
         public static bool GetLocalDrivingLicenseApplicationInfoByID(
         int LocalDrivingLicenseApplicationID,
         ref int ApplicationID,
-        ref int LicenseClasseID)
+        ref int LicenseClassID)
         {
             bool isFound = false;
 
@@ -32,7 +32,7 @@ namespace DVLD_DataAccess
                     isFound = true;
 
                     ApplicationID = (int)reader["ApplicationID"];
-                    LicenseClasseID = (int)reader["LicenseClasseID"];
+                    LicenseClassID = (int)reader["LicenseClassID"];
                 }
 
                 reader.Close();
@@ -53,7 +53,7 @@ namespace DVLD_DataAccess
         public static bool GetLocalDrivingLicenseApplicationInfoByApplicationID(
         int ApplicationID,
         ref int LocalDrivingLicenseApplicationID,
-        ref int LicenseClasseID)
+        ref int LicenseClassID)
         {
             bool isFound = false;
 
@@ -75,7 +75,7 @@ namespace DVLD_DataAccess
                     isFound = true;
 
                     LocalDrivingLicenseApplicationID = (int)reader["LocalDrivingLicenseApplicationID"];
-                    LicenseClasseID = (int)reader["LicenseClasseID"];
+                    LicenseClassID = (int)reader["LicenseClassID"];
                 }
 
                 reader.Close();
@@ -93,22 +93,22 @@ namespace DVLD_DataAccess
             return isFound;
         }
 
-        public static int AddNewLocalDrivingLicenseApplication(int ApplicationID, int LicenseClasseID)
+        public static int AddNewLocalDrivingLicenseApplication(int ApplicationID, int LicenseClassID)
         {
             int LocalDrivingLicenseApplicationID = -1;
 
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"INSERT INTO LocalDrivingLicenseApplications
-                    (ApplicationID, LicenseClasseID)
+                    (ApplicationID, LicenseClassID)
                      VALUES
-                    (@ApplicationID, @LicenseClasseID);
+                    (@ApplicationID, @LicenseClassID);
                      SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-            command.Parameters.AddWithValue("@LicenseClasseID", LicenseClasseID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
 
             try
             {
@@ -136,7 +136,7 @@ namespace DVLD_DataAccess
         public static bool UpdateLocalDrivingLicenseApplication(
         int LocalDrivingLicenseApplicationID,
         int ApplicationID,
-        int LicenseClasseID)
+        int LicenseClassID)
         {
             int rowsAffected = 0;
 
@@ -144,14 +144,14 @@ namespace DVLD_DataAccess
 
             string query = @"UPDATE LocalDrivingLicenseApplications SET
                     ApplicationID = @ApplicationID,
-                    LicenseClasseID = @LicenseClasseID
+                    LicenseClassID = @LicenseClassID
                     WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID;";
 
             SqlCommand command = new SqlCommand(query, connection);
 
             command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
             command.Parameters.AddWithValue("@ApplicationID", ApplicationID);
-            command.Parameters.AddWithValue("@LicenseClasseID", LicenseClasseID);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
 
             try
             {

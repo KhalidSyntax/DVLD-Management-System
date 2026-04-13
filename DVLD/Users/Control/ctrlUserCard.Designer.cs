@@ -68,27 +68,30 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
+            this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.Location = new System.Drawing.Point(278, 28);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(34, 17);
+            this.lblUserName.Size = new System.Drawing.Size(36, 17);
             this.lblUserName.TabIndex = 17;
             this.lblUserName.Text = "[???]";
             // 
             // lblIsActive
             // 
             this.lblIsActive.AutoSize = true;
+            this.lblIsActive.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIsActive.Location = new System.Drawing.Point(404, 28);
             this.lblIsActive.Name = "lblIsActive";
-            this.lblIsActive.Size = new System.Drawing.Size(34, 17);
+            this.lblIsActive.Size = new System.Drawing.Size(36, 17);
             this.lblIsActive.TabIndex = 16;
             this.lblIsActive.Text = "[???]";
             // 
             // lblUserID
             // 
             this.lblUserID.AutoSize = true;
+            this.lblUserID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserID.Location = new System.Drawing.Point(137, 28);
             this.lblUserID.Name = "lblUserID";
-            this.lblUserID.Size = new System.Drawing.Size(34, 17);
+            this.lblUserID.Size = new System.Drawing.Size(36, 17);
             this.lblUserID.TabIndex = 15;
             this.lblUserID.Text = "[???]";
             // 

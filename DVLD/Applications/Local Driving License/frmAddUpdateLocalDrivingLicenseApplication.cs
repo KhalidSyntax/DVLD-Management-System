@@ -19,6 +19,7 @@ namespace DVLD.Applications
         {
             InitializeComponent();
             _Mode = enMode.AddNew;
+            ctrlPersonCardWithFilter1.OnPersonSelected += ctrlPersonCardWithFilter1_OnPersonSelected;
         }
 
         public frmAddUpdateLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID)
@@ -26,6 +27,7 @@ namespace DVLD.Applications
             InitializeComponent();
             _Mode = enMode.Update;
             _LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID;
+            ctrlPersonCardWithFilter1.OnPersonSelected += ctrlPersonCardWithFilter1_OnPersonSelected;
         }
 
         private void _FillLicenseClassesInComboBox()
@@ -98,7 +100,7 @@ namespace DVLD.Applications
                 return;
             }
 
-            ctrlPersonCardWithFilter1.FilterEnabled = true;
+            ctrlPersonCardWithFilter1.FilterEnabled = false;
             ctrlPersonCardWithFilter1.LoadPersonInfo(_LocalDrivingLicenseApplication.ApplicantPersonID);
             _SelectedPersonID = ctrlPersonCardWithFilter1.PersonID;
 
@@ -161,7 +163,10 @@ namespace DVLD.Applications
             }
 
             int LicenseClassID = (int)cbLicenseClass.SelectedValue;
+
             _LocalDrivingLicenseApplication.LicenseClassID = LicenseClassID;
+
+            _LocalDrivingLicenseApplication.ApplicantPersonID = _SelectedPersonID;
 
             if (!_LocalDrivingLicenseApplication.IsApplicantOldEnough())
             {
@@ -184,7 +189,7 @@ namespace DVLD.Applications
             if (ActiveApplicationID != -1)
             {
                 MessageBox.Show(
-                    "Choose another License Class, the selected Person already has an active application for the selected class with id = "
+                    "You already have an active application for this license class = "
                     + ActiveApplicationID,
                     "Error",
                     MessageBoxButtons.OK,
@@ -211,7 +216,6 @@ namespace DVLD.Applications
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                _LocalDrivingLicenseApplication.ApplicantPersonID = _SelectedPersonID;
                 _LocalDrivingLicenseApplication.ApplicationTypeID = 1;
                 _LocalDrivingLicenseApplication.ApplicationStatus = clsApplication.enApplicationStatus.New;
                 _LocalDrivingLicenseApplication.PaidFees = Convert.ToSingle(lblApplicationFees.Text.Trim());
@@ -221,7 +225,7 @@ namespace DVLD.Applications
                 {
                     lblLocalDrivingLicebseApplicationID.Text = _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
                     _Mode = enMode.Update;
-                    btnSave.Enabled = true;
+                    btnSave.Enabled = false;
                     lblMode.Text = "Update Local Driving License Application";
 
                     MessageBox.Show(
@@ -241,9 +245,9 @@ namespace DVLD.Applications
             }
         }
 
-        private void ctrlPersonCardWithFilter1_OnPersonSelected(int obj)
+        private void ctrlPersonCardWithFilter1_OnPersonSelected(int PersonID)
         {
-            _SelectedPersonID = obj;
+            _SelectedPersonID = PersonID;
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -115,54 +115,60 @@
             // lblDOB
             // 
             this.lblDOB.AutoSize = true;
+            this.lblDOB.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDOB.Location = new System.Drawing.Point(514, 157);
             this.lblDOB.Name = "lblDOB";
-            this.lblDOB.Size = new System.Drawing.Size(34, 17);
+            this.lblDOB.Size = new System.Drawing.Size(36, 17);
             this.lblDOB.TabIndex = 17;
             this.lblDOB.Text = "[???]";
             // 
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPhone.Location = new System.Drawing.Point(514, 194);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(34, 17);
+            this.lblPhone.Size = new System.Drawing.Size(36, 17);
             this.lblPhone.TabIndex = 16;
             this.lblPhone.Text = "[???]";
             // 
             // lblCountry
             // 
             this.lblCountry.AutoSize = true;
+            this.lblCountry.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCountry.Location = new System.Drawing.Point(514, 231);
             this.lblCountry.Name = "lblCountry";
-            this.lblCountry.Size = new System.Drawing.Size(34, 17);
+            this.lblCountry.Size = new System.Drawing.Size(36, 17);
             this.lblCountry.TabIndex = 15;
             this.lblCountry.Text = "[???]";
             // 
             // lblGender
             // 
             this.lblGender.AutoSize = true;
+            this.lblGender.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGender.Location = new System.Drawing.Point(151, 157);
             this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(34, 17);
+            this.lblGender.Size = new System.Drawing.Size(36, 17);
             this.lblGender.TabIndex = 14;
             this.lblGender.Text = "[???]";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.Location = new System.Drawing.Point(151, 194);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(34, 17);
+            this.lblEmail.Size = new System.Drawing.Size(36, 17);
             this.lblEmail.TabIndex = 13;
             this.lblEmail.Text = "[???]";
             // 
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAddress.Location = new System.Drawing.Point(151, 231);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(34, 17);
+            this.lblAddress.Size = new System.Drawing.Size(36, 17);
             this.lblAddress.TabIndex = 12;
             this.lblAddress.Text = "[???]";
             // 
@@ -180,18 +186,20 @@
             // lblNationalNo
             // 
             this.lblNationalNo.AutoSize = true;
+            this.lblNationalNo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNationalNo.Location = new System.Drawing.Point(151, 120);
             this.lblNationalNo.Name = "lblNationalNo";
-            this.lblNationalNo.Size = new System.Drawing.Size(34, 17);
+            this.lblNationalNo.Size = new System.Drawing.Size(36, 17);
             this.lblNationalNo.TabIndex = 10;
             this.lblNationalNo.Text = "[???]";
             // 
             // lblPersonID
             // 
             this.lblPersonID.AutoSize = true;
+            this.lblPersonID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPersonID.Location = new System.Drawing.Point(151, 46);
             this.lblPersonID.Name = "lblPersonID";
-            this.lblPersonID.Size = new System.Drawing.Size(34, 17);
+            this.lblPersonID.Size = new System.Drawing.Size(36, 17);
             this.lblPersonID.TabIndex = 9;
             this.lblPersonID.Text = "[???]";
             // 

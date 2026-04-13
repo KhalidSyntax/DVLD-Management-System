@@ -135,6 +135,9 @@ namespace DVLD_Business
 
         public bool IsApplicantOldEnough()
         {
+            if (PersonInfo == null)
+                return false;
+
             int age = DateTime.Now.Year - PersonInfo.DateOfBirth.Year;
 
             if (PersonInfo.DateOfBirth > DateTime.Now.AddYears(-age))

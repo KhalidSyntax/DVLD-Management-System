@@ -69,6 +69,7 @@
             this.tpPersonalInfo.BackColor = System.Drawing.Color.White;
             this.tpPersonalInfo.Controls.Add(this.ctrlPersonCardWithFilter1);
             this.tpPersonalInfo.Controls.Add(this.btnNext);
+            this.tpPersonalInfo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpPersonalInfo.Location = new System.Drawing.Point(4, 22);
             this.tpPersonalInfo.Name = "tpPersonalInfo";
             this.tpPersonalInfo.Padding = new System.Windows.Forms.Padding(3);
@@ -143,11 +144,11 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(69, 62);
+            this.label1.Location = new System.Drawing.Point(6, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(140, 24);
+            this.label1.Size = new System.Drawing.Size(203, 24);
             this.label1.TabIndex = 0;
-            this.label1.Text = "D.L.Application ID:";
+            this.label1.Text = "Driving License Application ID:";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tcApplication
@@ -179,6 +180,7 @@
             this.tpApplicationInfo.Controls.Add(this.label11);
             this.tpApplicationInfo.Controls.Add(this.label10);
             this.tpApplicationInfo.Controls.Add(this.label5);
+            this.tpApplicationInfo.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tpApplicationInfo.Location = new System.Drawing.Point(4, 22);
             this.tpApplicationInfo.Name = "tpApplicationInfo";
             this.tpApplicationInfo.Padding = new System.Windows.Forms.Padding(3);

@@ -59,7 +59,7 @@
             // 
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.label1.Location = new System.Drawing.Point(463, 147);
+            this.label1.Location = new System.Drawing.Point(597, 147);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(241, 44);
             this.label1.TabIndex = 0;
@@ -96,12 +96,13 @@
             this.dgvPeople.ReadOnly = true;
             this.dgvPeople.RowTemplate.Height = 30;
             this.dgvPeople.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPeople.Size = new System.Drawing.Size(1093, 228);
+            this.dgvPeople.Size = new System.Drawing.Size(1360, 228);
             this.dgvPeople.TabIndex = 0;
             this.dgvPeople.DoubleClick += new System.EventHandler(this.dgvPeople_DoubleClick);
             // 
             // cmsPeople
             // 
+            this.cmsPeople.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmsPeople.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miShowDetails,
             this.miAddNew,
@@ -112,34 +113,37 @@
             this.miSendEmail,
             this.miPhoneCall});
             this.cmsPeople.Name = "contextMenuStrip1";
-            this.cmsPeople.Size = new System.Drawing.Size(179, 244);
+            this.cmsPeople.Size = new System.Drawing.Size(191, 244);
             // 
             // miShowDetails
             // 
             this.miShowDetails.Image = global::DVLD.Properties.Resources.PersonDetails_32;
+            this.miShowDetails.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miShowDetails.Name = "miShowDetails";
-            this.miShowDetails.Size = new System.Drawing.Size(178, 38);
+            this.miShowDetails.Size = new System.Drawing.Size(190, 38);
             this.miShowDetails.Text = "Show Details";
             this.miShowDetails.Click += new System.EventHandler(this.miShowDetails_Click);
             // 
             // miAddNew
             // 
             this.miAddNew.Image = global::DVLD.Properties.Resources.AddPerson_321;
+            this.miAddNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miAddNew.Name = "miAddNew";
-            this.miAddNew.Size = new System.Drawing.Size(178, 38);
+            this.miAddNew.Size = new System.Drawing.Size(190, 38);
             this.miAddNew.Text = "Add New Person";
             this.miAddNew.Click += new System.EventHandler(this.miAddNew_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(175, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
             // 
             // miEdit
             // 
             this.miEdit.Image = global::DVLD.Properties.Resources.edit_32;
+            this.miEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miEdit.Name = "miEdit";
-            this.miEdit.Size = new System.Drawing.Size(178, 38);
+            this.miEdit.Size = new System.Drawing.Size(190, 38);
             this.miEdit.Text = "Edit";
             this.miEdit.Click += new System.EventHandler(this.miEdit_Click);
             // 
@@ -148,28 +152,30 @@
             this.miDelete.Image = global::DVLD.Properties.Resources.Delete_32;
             this.miDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miDelete.Name = "miDelete";
-            this.miDelete.Size = new System.Drawing.Size(178, 38);
+            this.miDelete.Size = new System.Drawing.Size(190, 38);
             this.miDelete.Text = "Delete";
             this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(175, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(187, 6);
             // 
             // miSendEmail
             // 
             this.miSendEmail.Image = global::DVLD.Properties.Resources.send_email_32;
+            this.miSendEmail.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miSendEmail.Name = "miSendEmail";
-            this.miSendEmail.Size = new System.Drawing.Size(178, 38);
+            this.miSendEmail.Size = new System.Drawing.Size(190, 38);
             this.miSendEmail.Text = "Send Email";
             this.miSendEmail.Click += new System.EventHandler(this.miSendEmail_Click);
             // 
             // miPhoneCall
             // 
             this.miPhoneCall.Image = global::DVLD.Properties.Resources.call_32;
+            this.miPhoneCall.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.miPhoneCall.Name = "miPhoneCall";
-            this.miPhoneCall.Size = new System.Drawing.Size(178, 38);
+            this.miPhoneCall.Size = new System.Drawing.Size(190, 38);
             this.miPhoneCall.Text = "Phone Call";
             this.miPhoneCall.Click += new System.EventHandler(this.miPhoneCall_Click);
             // 
@@ -184,7 +190,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(1012, 472);
+            this.btnClose.Location = new System.Drawing.Point(1279, 472);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(118, 38);
             this.btnClose.TabIndex = 4;
@@ -194,6 +200,7 @@
             // 
             // cbFilterBy
             // 
+            this.cbFilterBy.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFilterBy.FormattingEnabled = true;
             this.cbFilterBy.Items.AddRange(new object[] {
             "None",
@@ -215,6 +222,7 @@
             // 
             // label3
             // 
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(34, 207);
             this.label3.Name = "label3";
@@ -224,6 +232,7 @@
             // 
             // txtFilterValue
             // 
+            this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilterValue.Location = new System.Drawing.Point(271, 207);
             this.txtFilterValue.Name = "txtFilterValue";
             this.txtFilterValue.Size = new System.Drawing.Size(188, 25);
@@ -245,7 +254,7 @@
             // 
             this.btnAddPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddPerson.Image = global::DVLD.Properties.Resources.AddPerson_32;
-            this.btnAddPerson.Location = new System.Drawing.Point(1045, 187);
+            this.btnAddPerson.Location = new System.Drawing.Point(1312, 187);
             this.btnAddPerson.Name = "btnAddPerson";
             this.btnAddPerson.Size = new System.Drawing.Size(85, 45);
             this.btnAddPerson.TabIndex = 3;
@@ -255,7 +264,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD.Properties.Resources.People_400;
-            this.pictureBox1.Location = new System.Drawing.Point(466, 44);
+            this.pictureBox1.Location = new System.Drawing.Point(600, 44);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(234, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -267,7 +276,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1174, 518);
+            this.ClientSize = new System.Drawing.Size(1441, 518);
             this.Controls.Add(this.lblRecordsCount);
             this.Controls.Add(this.txtFilterValue);
             this.Controls.Add(this.label3);

@@ -39,12 +39,6 @@
             this.lbl1 = new System.Windows.Forms.Label();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.cmsApplications = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.dgvLocalDrivingLicenseApplications = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnAddLocalDrivingLicenseApplication = new System.Windows.Forms.Button();
             this.miShowApplicationDetails = new System.Windows.Forms.ToolStripMenuItem();
             this.miEditApplication = new System.Windows.Forms.ToolStripMenuItem();
             this.miDeleteApplication = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,9 +47,15 @@
             this.mischeduleVisionTest = new System.Windows.Forms.ToolStripMenuItem();
             this.mischeduleWrittenTest = new System.Windows.Forms.ToolStripMenuItem();
             this.mischeduleStreetTest = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.miIssueDrivingLicenseFirstTime = new System.Windows.Forms.ToolStripMenuItem();
             this.miShowLicense = new System.Windows.Forms.ToolStripMenuItem();
             this.mishowPersonLicenseHistory = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgvLocalDrivingLicenseApplications = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAddLocalDrivingLicenseApplication = new System.Windows.Forms.Button();
             this.cmsApplications.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLocalDrivingLicenseApplications)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -147,87 +147,8 @@
             this.miShowLicense,
             this.mishowPersonLicenseHistory});
             this.cmsApplications.Name = "contextMenuStrip1";
-            this.cmsApplications.Size = new System.Drawing.Size(281, 320);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(277, 6);
-            // 
-            // dgvApplications
-            // 
-            this.dgvLocalDrivingLicenseApplications.AllowUserToAddRows = false;
-            this.dgvLocalDrivingLicenseApplications.AllowUserToDeleteRows = false;
-            this.dgvLocalDrivingLicenseApplications.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvLocalDrivingLicenseApplications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvLocalDrivingLicenseApplications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvLocalDrivingLicenseApplications.ContextMenuStrip = this.cmsApplications;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvLocalDrivingLicenseApplications.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvLocalDrivingLicenseApplications.EnableHeadersVisualStyles = false;
-            this.dgvLocalDrivingLicenseApplications.Location = new System.Drawing.Point(42, 220);
-            this.dgvLocalDrivingLicenseApplications.Name = "dgvApplications";
-            this.dgvLocalDrivingLicenseApplications.ReadOnly = true;
-            this.dgvLocalDrivingLicenseApplications.RowTemplate.Height = 30;
-            this.dgvLocalDrivingLicenseApplications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLocalDrivingLicenseApplications.Size = new System.Drawing.Size(1404, 228);
-            this.dgvLocalDrivingLicenseApplications.TabIndex = 11;
-            this.dgvLocalDrivingLicenseApplications.DoubleClick += new System.EventHandler(this.dgvLocalDrivingLicenseApplications_DoubleClick);
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
-            this.label1.Location = new System.Drawing.Point(467, 129);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(555, 44);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Local Driving License Applications";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::DVLD.Properties.Resources.Local_322;
-            this.pictureBox2.Location = new System.Drawing.Point(776, 52);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::DVLD.Properties.Resources.Applications;
-            this.pictureBox1.Location = new System.Drawing.Point(627, 26);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(234, 100);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 14;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnAddLocalDrivingLicenseApplication
-            // 
-            this.btnAddLocalDrivingLicenseApplication.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddLocalDrivingLicenseApplication.Image = global::DVLD.Properties.Resources.New_Application_64;
-            this.btnAddLocalDrivingLicenseApplication.Location = new System.Drawing.Point(1378, 149);
-            this.btnAddLocalDrivingLicenseApplication.Name = "btnAddLocalDrivingLicenseApplication";
-            this.btnAddLocalDrivingLicenseApplication.Size = new System.Drawing.Size(68, 65);
-            this.btnAddLocalDrivingLicenseApplication.TabIndex = 16;
-            this.btnAddLocalDrivingLicenseApplication.UseVisualStyleBackColor = true;
-            this.btnAddLocalDrivingLicenseApplication.Click += new System.EventHandler(this.btnAddLocalDrivingLicenseApplication_Click);
+            this.cmsApplications.Size = new System.Drawing.Size(281, 342);
+            this.cmsApplications.Opening += new System.ComponentModel.CancelEventHandler(this.cmsApplications_Opening);
             // 
             // miShowApplicationDetails
             // 
@@ -276,7 +197,6 @@
             this.miScheduleTests.Name = "miScheduleTests";
             this.miScheduleTests.Size = new System.Drawing.Size(280, 38);
             this.miScheduleTests.Text = "Schedule Tests";
-            this.miScheduleTests.Click += new System.EventHandler(this.miScheduleTests_Click);
             // 
             // mischeduleVisionTest
             // 
@@ -305,6 +225,11 @@
             this.mischeduleStreetTest.Text = "Schedule Street Test";
             this.mischeduleStreetTest.Click += new System.EventHandler(this.mischeduleStreetTest_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(277, 6);
+            // 
             // miIssueDrivingLicenseFirstTime
             // 
             this.miIssueDrivingLicenseFirstTime.Image = global::DVLD.Properties.Resources.IssueDrivingLicense_32;
@@ -331,6 +256,81 @@
             this.mishowPersonLicenseHistory.Size = new System.Drawing.Size(280, 38);
             this.mishowPersonLicenseHistory.Text = "Show Person License History";
             this.mishowPersonLicenseHistory.Click += new System.EventHandler(this.mishowPersonLicenseHistory_Click);
+            // 
+            // dgvLocalDrivingLicenseApplications
+            // 
+            this.dgvLocalDrivingLicenseApplications.AllowUserToAddRows = false;
+            this.dgvLocalDrivingLicenseApplications.AllowUserToDeleteRows = false;
+            this.dgvLocalDrivingLicenseApplications.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvLocalDrivingLicenseApplications.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvLocalDrivingLicenseApplications.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLocalDrivingLicenseApplications.ContextMenuStrip = this.cmsApplications;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(230)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvLocalDrivingLicenseApplications.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvLocalDrivingLicenseApplications.EnableHeadersVisualStyles = false;
+            this.dgvLocalDrivingLicenseApplications.Location = new System.Drawing.Point(42, 220);
+            this.dgvLocalDrivingLicenseApplications.Name = "dgvLocalDrivingLicenseApplications";
+            this.dgvLocalDrivingLicenseApplications.ReadOnly = true;
+            this.dgvLocalDrivingLicenseApplications.RowTemplate.Height = 30;
+            this.dgvLocalDrivingLicenseApplications.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvLocalDrivingLicenseApplications.Size = new System.Drawing.Size(1404, 228);
+            this.dgvLocalDrivingLicenseApplications.TabIndex = 11;
+            this.dgvLocalDrivingLicenseApplications.DoubleClick += new System.EventHandler(this.dgvLocalDrivingLicenseApplications_DoubleClick);
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(176)))), ((int)(((byte)(0)))), ((int)(((byte)(32)))));
+            this.label1.Location = new System.Drawing.Point(467, 129);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(555, 44);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Local Driving License Applications";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::DVLD.Properties.Resources.Local_322;
+            this.pictureBox2.Location = new System.Drawing.Point(776, 52);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DVLD.Properties.Resources.Applications;
+            this.pictureBox1.Location = new System.Drawing.Point(627, 26);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(234, 100);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 14;
+            this.pictureBox1.TabStop = false;
+            // 
+            // btnAddLocalDrivingLicenseApplication
+            // 
+            this.btnAddLocalDrivingLicenseApplication.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAddLocalDrivingLicenseApplication.Image = global::DVLD.Properties.Resources.New_Application_64;
+            this.btnAddLocalDrivingLicenseApplication.Location = new System.Drawing.Point(1378, 149);
+            this.btnAddLocalDrivingLicenseApplication.Name = "btnAddLocalDrivingLicenseApplication";
+            this.btnAddLocalDrivingLicenseApplication.Size = new System.Drawing.Size(68, 65);
+            this.btnAddLocalDrivingLicenseApplication.TabIndex = 16;
+            this.btnAddLocalDrivingLicenseApplication.UseVisualStyleBackColor = true;
+            this.btnAddLocalDrivingLicenseApplication.Click += new System.EventHandler(this.btnAddLocalDrivingLicenseApplication_Click);
             // 
             // frmListLocalDrivingLicenseApplications
             // 

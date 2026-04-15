@@ -1,11 +1,10 @@
-﻿using DVLD_Business;
-using DVLD.Classes;
-using System;
+﻿using System;
 using System.Data;
+using DVLD_Business;
 using System.Drawing;
-using System.Security.Policy;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+//using DVLD.DriverLicense;
+//using DVLD.Licenses.International_License;
 
 namespace DVLD.Applications
 {
@@ -21,7 +20,8 @@ namespace DVLD.Applications
         private void _RefreshApplicationsList()
         {
             _dtAllLocalDrivingLicenseApplications =
-                clsLocalDrivingLicenseApplication.GetAllLocalDrivingLicenseApplications();
+                clsLocalDrivingLicenseApplication.
+                GetAllLocalDrivingLicenseApplications();
 
             dgvLocalDrivingLicenseApplications.DataSource =
                 _dtAllLocalDrivingLicenseApplications;
@@ -58,7 +58,6 @@ namespace DVLD.Applications
                 dgvLocalDrivingLicenseApplications.Columns[3].HeaderText = "Full Name";
                 dgvLocalDrivingLicenseApplications.Columns[3].Width = 280;
 
-                dgvLocalDrivingLicenseApplications.Columns[4].DefaultCellStyle.Format = "d";
                 dgvLocalDrivingLicenseApplications.Columns[4].HeaderText = "Application Date";
                 dgvLocalDrivingLicenseApplications.Columns[4].Width = 180;
 
@@ -240,47 +239,82 @@ namespace DVLD.Applications
             }
         }
 
-
-        // Later 
-
-        private void miScheduleTests_Click(object sender, EventArgs e)
+        private void cmsApplications_Opening(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            MessageBox.Show(
-            "This Feature Is Not Implemented Yet!",
-            "Not Ready!",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
+            int localDrivingLicenseApplicationID = 
+                (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+            
+            clsLocalDrivingLicenseApplication localDrivingLicenseApplication =
+                clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(
+                    localDrivingLicenseApplicationID);
+
+            if (localDrivingLicenseApplication == null)
+                return;
+
+            bool IsNew = localDrivingLicenseApplication.ApplicationStatus ==
+                         clsApplication.enApplicationStatus.New;
+            // int PassedTests = localDrivingLicenseApplication.GetPassedTestsCount();
+
+            // miDeleteApplication.Enabled = IsNew && PassedTests == 0;
+            miCancelApplication.Enabled = IsNew;
+
+            // bool LicenseExists = localDrivingLicenseApplication.IsLicenseIssued();
+            // miIssueDrivingLicenseFirstTime.Enabled = (PassedTests == 3) && !LicenseExists;
+            // miShowLicense.Enabled = LicenseExists;
+
+            // miEditApplication.Enabled = !LicenseExists && IsNew;
+
+
+            bool PassedVisionTest = localDrivingLicenseApplication.
+                DoesPassTestType(clsTestType.enTestType.VisionTest);
+
+
+            bool PassedWrittenTest = localDrivingLicenseApplication.
+                DoesPassTestType(clsTestType.enTestType.WrittenTest);
+            
+            
+            bool PassedStreetTest = localDrivingLicenseApplication.
+                DoesPassTestType(clsTestType.enTestType.StreetTest);
+
+            miScheduleTests.Enabled = (
+                !PassedVisionTest ||
+                !PassedWrittenTest ||
+                !PassedStreetTest) &&
+                IsNew;
+
+
+            mischeduleVisionTest.Enabled = false;
+            mischeduleWrittenTest.Enabled = false;
+            mischeduleStreetTest.Enabled = false;
+
+            if (miScheduleTests.Enabled)
+            {
+                mischeduleVisionTest.Enabled = !PassedVisionTest;
+
+                mischeduleWrittenTest.Enabled = PassedVisionTest && !PassedWrittenTest;
+
+                mischeduleStreetTest.Enabled = PassedVisionTest && PassedWrittenTest && !PassedStreetTest;
+            }
         }
 
-        private void miIssueDrivingLicenseFirstTime_Click(object sender, EventArgs e)
+        private void _ScheduleTest(clsTestType.enTestType TestType)
         {
-            MessageBox.Show(
-            "This Feature Is Not Implemented Yet!",
-            "Not Ready!",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
-        }
+            //int localDrivingLicenseApplicationID =
+            //    (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
 
-        private void miShowLicense_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(
-            "This Feature Is Not Implemented Yet!",
-            "Not Ready!",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
-        }
+            //frmListTestAppointments frm =
+            //    new frmListTestAppointments(
+            //        localDrivingLicenseApplicationID,
+            //        TestType);
 
-        private void mishowPersonLicenseHistory_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(
-            "This Feature Is Not Implemented Yet!",
-            "Not Ready!",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
+            //frm.ShowDialog();
+            //_RefreshApplicationsList();
         }
 
         private void mischeduleVisionTest_Click(object sender, EventArgs e)
         {
+            // _ScheduleTest(clsTestType.enTestType.VisionTest);
+
             MessageBox.Show(
             "This Feature Is Not Implemented Yet!",
             "Not Ready!",
@@ -290,6 +324,8 @@ namespace DVLD.Applications
 
         private void mischeduleWrittenTest_Click(object sender, EventArgs e)
         {
+            // _ScheduleTest(clsTestType.enTestType.WrittenTest);
+
             MessageBox.Show(
             "This Feature Is Not Implemented Yet!",
             "Not Ready!",
@@ -299,6 +335,84 @@ namespace DVLD.Applications
 
         private void mischeduleStreetTest_Click(object sender, EventArgs e)
         {
+            // _ScheduleTest(clsTestType.enTestType.StreetTest);
+
+            MessageBox.Show(
+            "This Feature Is Not Implemented Yet!",
+            "Not Ready!",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Exclamation);
+        }
+
+        private void miIssueDrivingLicenseFirstTime_Click(object sender, EventArgs e)
+        {
+            //int localDrivingLicenseApplicationID =
+            //    (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+
+            //frmIssueDriverLicenseFirstTime frm =
+            //    new frmIssueDriverLicenseFirstTime(
+            //        LocalDrivingLicenseApplicationID);
+
+            //frm.ShowDialog();
+            //_RefreshApplicationsList();
+
+            MessageBox.Show(
+            "This Feature Is Not Implemented Yet!",
+            "Not Ready!",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Exclamation);
+        }
+
+        private void miShowLicense_Click(object sender, EventArgs e)
+        {
+            //int localDrivingLicenseApplicationID =
+            //    (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+
+            //int LicenseID = 
+            //clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(
+            //        localDrivingLicenseApplicationID).GetActiveLicenseID();
+
+            //if(LicenseID != -1)
+            //{
+            //    frmShowLicenseInfo frm =
+            //        new frmShowLicenseInfo(LicenseID);
+
+            //    frm.ShowDialog();
+            //}
+            //else
+            //{
+            //    MessageBox.Show(
+            //    "No License Found!",
+            //    "No License",
+            //    MessageBoxButtons.OK,
+            //    MessageBoxIcon.Error);
+            //}
+
+            MessageBox.Show(
+            "This Feature Is Not Implemented Yet!",
+            "Not Ready!",
+            MessageBoxButtons.OK,
+            MessageBoxIcon.Exclamation);
+        }
+
+        private void mishowPersonLicenseHistory_Click(object sender, EventArgs e)
+        {
+            //int localDrivingLicenseApplicationID =
+            //    (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+
+            //clsLocalDrivingLicenseApplication localDrivingLicenseApplication =
+            //    clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(
+            //        localDrivingLicenseApplicationID);
+
+            //if (localDrivingLicenseApplication == null)
+            //    return;
+
+            //frmShowPersonLicenseHistory frm =
+            //    new frmShowPersonLicenseHistory(
+            //        localDrivingLicenseApplication.ApplicantPersonID);
+
+            //frm.ShowDialog();
+
             MessageBox.Show(
             "This Feature Is Not Implemented Yet!",
             "Not Ready!",
@@ -326,6 +440,5 @@ namespace DVLD.Applications
         {
             this.Close();
         }
-
     }
 }

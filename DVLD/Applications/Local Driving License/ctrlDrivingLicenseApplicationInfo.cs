@@ -23,9 +23,9 @@ namespace DVLD
             InitializeComponent();
         }
 
-        public void _ResetLocalDrivingLicenseApplicationInfo()
+        public void ResetLocalDrivingLicenseApplicationInfo()
         {
-            // ctrlApplicationBasicInfo1.ResetApplicationInfo();
+            ctrlApplicationBasicInfo1.ResetApplicationInfo();
             _LocalDrivingLicenseApplicationID = -1;
             _LicenseID = -1;
 
@@ -51,9 +51,8 @@ namespace DVLD
             //lblPassedTests.Text = 
             //    _LocalDrivingLicenseApplication.GetPassedTestCount().ToString() + "/3";
 
-            //ctrlApplicationBasicInfo1.LoadApplicationInfo(
-            //    _LocalDrivingLicenseApplication.ApplicationID);
-
+            ctrlApplicationBasicInfo1.LoadByApplicationID(
+                _LocalDrivingLicenseApplication.ApplicationID);
         }
 
         public void LoadApplicationInfoByLocalDrivingAppID(int LocalDrivingLicenseApplicationID)
@@ -64,7 +63,7 @@ namespace DVLD
 
             if (_LocalDrivingLicenseApplication == null)
             {
-                _ResetLocalDrivingLicenseApplicationInfo();
+                ResetLocalDrivingLicenseApplicationInfo();
                 MessageBox.Show(
                     $"No Local Driving License Application was found with ID = {LocalDrivingLicenseApplicationID}.",
                     "Application Not Found",
@@ -81,9 +80,9 @@ namespace DVLD
 
             if (_LocalDrivingLicenseApplication == null)
             {
-                _ResetLocalDrivingLicenseApplicationInfo();
+                ResetLocalDrivingLicenseApplicationInfo();
                 MessageBox.Show(
-                    $"No Local Driving License Application was found with Application ID = {ApplicationID}.",
+                    $"No local driving license application found with ID = {LocalDrivingLicenseApplicationID}.",
                     "Application Not Found",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);

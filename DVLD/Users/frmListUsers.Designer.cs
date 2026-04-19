@@ -28,32 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblRecordsCount = new System.Windows.Forms.Label();
-            this.txtFilterValue = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbFilterBy = new System.Windows.Forms.ComboBox();
             this.lbl1 = new System.Windows.Forms.Label();
-            this.cmsUsers = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.miShowDetails = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.miAddNew = new System.Windows.Forms.ToolStripMenuItem();
-            this.miEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.miDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.miChangePassword = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.miSendEmail = new System.Windows.Forms.ToolStripMenuItem();
-            this.miPhoneCall = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.cbIsActive = new System.Windows.Forms.ComboBox();
             this.btnAddNewUser = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.btnAddPerson = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cmsUsers.SuspendLayout();
+            this.txtFilterValue = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -68,16 +55,6 @@
             this.lblRecordsCount.TabIndex = 20;
             this.lblRecordsCount.Text = "???";
             this.lblRecordsCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // txtFilterValue
-            // 
-            this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFilterValue.Location = new System.Drawing.Point(242, 162);
-            this.txtFilterValue.Name = "txtFilterValue";
-            this.txtFilterValue.Size = new System.Drawing.Size(188, 25);
-            this.txtFilterValue.TabIndex = 2;
-            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
-            this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
             // 
             // label3
             // 
@@ -116,95 +93,6 @@
             this.lbl1.TabIndex = 18;
             this.lbl1.Text = "# Records: ";
             // 
-            // cmsUsers
-            // 
-            this.cmsUsers.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miShowDetails,
-            this.toolStripSeparator1,
-            this.miAddNew,
-            this.miEdit,
-            this.miDelete,
-            this.miChangePassword,
-            this.toolStripSeparator2,
-            this.miSendEmail,
-            this.miPhoneCall});
-            this.cmsUsers.Name = "contextMenuStrip1";
-            this.cmsUsers.Size = new System.Drawing.Size(196, 282);
-            // 
-            // miShowDetails
-            // 
-            this.miShowDetails.Image = global::DVLD.Properties.Resources.PersonDetails_32;
-            this.miShowDetails.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.miShowDetails.Name = "miShowDetails";
-            this.miShowDetails.Size = new System.Drawing.Size(195, 38);
-            this.miShowDetails.Text = "Show Details";
-            this.miShowDetails.Click += new System.EventHandler(this.miShowDetails_Click);
-            // 
-            // toolStripSeparator1
-            // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(192, 6);
-            // 
-            // miAddNew
-            // 
-            this.miAddNew.Image = global::DVLD.Properties.Resources.Add_New_User_32;
-            this.miAddNew.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.miAddNew.Name = "miAddNew";
-            this.miAddNew.Size = new System.Drawing.Size(195, 38);
-            this.miAddNew.Text = "Add New User";
-            this.miAddNew.Click += new System.EventHandler(this.miAddNew_Click);
-            // 
-            // miEdit
-            // 
-            this.miEdit.Image = global::DVLD.Properties.Resources.edit_32;
-            this.miEdit.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.miEdit.Name = "miEdit";
-            this.miEdit.Size = new System.Drawing.Size(195, 38);
-            this.miEdit.Text = "Edit";
-            this.miEdit.Click += new System.EventHandler(this.miEdit_Click);
-            // 
-            // miDelete
-            // 
-            this.miDelete.Image = global::DVLD.Properties.Resources.Delete_32;
-            this.miDelete.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.miDelete.Name = "miDelete";
-            this.miDelete.Size = new System.Drawing.Size(195, 38);
-            this.miDelete.Text = "Delete";
-            this.miDelete.Click += new System.EventHandler(this.miDelete_Click);
-            // 
-            // miChangePassword
-            // 
-            this.miChangePassword.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.miChangePassword.Image = global::DVLD.Properties.Resources.Password_32;
-            this.miChangePassword.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.miChangePassword.Name = "miChangePassword";
-            this.miChangePassword.Size = new System.Drawing.Size(195, 38);
-            this.miChangePassword.Text = "Change Password";
-            this.miChangePassword.Click += new System.EventHandler(this.miChangePassword_Click);
-            // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(192, 6);
-            // 
-            // miSendEmail
-            // 
-            this.miSendEmail.Image = global::DVLD.Properties.Resources.send_email_32;
-            this.miSendEmail.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.miSendEmail.Name = "miSendEmail";
-            this.miSendEmail.Size = new System.Drawing.Size(195, 38);
-            this.miSendEmail.Text = "Send Email";
-            this.miSendEmail.Click += new System.EventHandler(this.miSendEmail_Click);
-            // 
-            // miPhoneCall
-            // 
-            this.miPhoneCall.Image = global::DVLD.Properties.Resources.call_32;
-            this.miPhoneCall.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.miPhoneCall.Name = "miPhoneCall";
-            this.miPhoneCall.Size = new System.Drawing.Size(195, 38);
-            this.miPhoneCall.Text = "Phone Call";
-            this.miPhoneCall.Click += new System.EventHandler(this.miPhoneCall_Click);
-            // 
             // dgvUsers
             // 
             this.dgvUsers.AllowUserToAddRows = false;
@@ -220,7 +108,6 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvUsers.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvUsers.ContextMenuStrip = this.cmsUsers;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -290,16 +177,6 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // btnAddPerson
-            // 
-            this.btnAddPerson.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddPerson.Image = global::DVLD.Properties.Resources.AddPerson_32;
-            this.btnAddPerson.Location = new System.Drawing.Point(997, 152);
-            this.btnAddPerson.Name = "btnAddPerson";
-            this.btnAddPerson.Size = new System.Drawing.Size(85, 45);
-            this.btnAddPerson.TabIndex = 16;
-            this.btnAddPerson.UseVisualStyleBackColor = true;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD.Properties.Resources.Users_2_400;
@@ -309,6 +186,16 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
+            // 
+            // txtFilterValue
+            // 
+            this.txtFilterValue.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFilterValue.Location = new System.Drawing.Point(242, 162);
+            this.txtFilterValue.Name = "txtFilterValue";
+            this.txtFilterValue.Size = new System.Drawing.Size(188, 25);
+            this.txtFilterValue.TabIndex = 2;
+            this.txtFilterValue.TextChanged += new System.EventHandler(this.txtFilterValue_TextChanged);
+            this.txtFilterValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtFilterValue_KeyPress);
             // 
             // frmListUsers
             // 
@@ -321,7 +208,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.cbFilterBy);
             this.Controls.Add(this.btnClose);
-            this.Controls.Add(this.btnAddPerson);
             this.Controls.Add(this.lbl1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.dgvUsers);
@@ -333,7 +219,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manage Users";
             this.Load += new System.EventHandler(this.frmListUsers_Load);
-            this.cmsUsers.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -344,26 +229,15 @@
         #endregion
 
         private System.Windows.Forms.Label lblRecordsCount;
-        private System.Windows.Forms.TextBox txtFilterValue;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbFilterBy;
         private System.Windows.Forms.Button btnClose;
-        private System.Windows.Forms.Button btnAddPerson;
         private System.Windows.Forms.Label lbl1;
-        private System.Windows.Forms.ToolStripMenuItem miPhoneCall;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ToolStripMenuItem miSendEmail;
-        private System.Windows.Forms.ToolStripMenuItem miDelete;
-        private System.Windows.Forms.ToolStripMenuItem miEdit;
-        private System.Windows.Forms.ToolStripMenuItem miAddNew;
-        private System.Windows.Forms.ToolStripMenuItem miShowDetails;
-        private System.Windows.Forms.ContextMenuStrip cmsUsers;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.DataGridView dgvUsers;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddNewUser;
-        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem miChangePassword;
         private System.Windows.Forms.ComboBox cbIsActive;
+        private System.Windows.Forms.TextBox txtFilterValue;
     }
 }

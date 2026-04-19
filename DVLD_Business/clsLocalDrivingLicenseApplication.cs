@@ -260,6 +260,12 @@ namespace DVLD_Business
                 (int)TestTypeID);
         }
 
+        public static DateTime GetLastTestAppointmentDate(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
+        {
+            return clsLocalDrivingLicenseApplicationDataAccess.GetLastTestAppointmentDate(
+                LocalDrivingLicenseApplicationID,
+                (int)TestTypeID);
+        }
 
         // Later Explain
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using DVLD_Business;
+using DVLD.Tests;
 using System.Drawing;
 using System.Windows.Forms;
 //using DVLD.DriverLicense;
@@ -299,49 +300,31 @@ namespace DVLD.Applications
 
         private void _ScheduleTest(clsTestType.enTestType TestType)
         {
-            //int localDrivingLicenseApplicationID =
-            //    (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+            int localDrivingLicenseApplicationID =
+                (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
 
-            //frmListTestAppointments frm =
-            //    new frmListTestAppointments(
-            //        localDrivingLicenseApplicationID,
-            //        TestType);
+            frmListTestAppointments frm =
+                new frmListTestAppointments(
+                    localDrivingLicenseApplicationID,
+                    TestType);
 
-            //frm.ShowDialog();
-            //_RefreshApplicationsList();
+            frm.ShowDialog();
+            _RefreshApplicationsList();
         }
 
         private void mischeduleVisionTest_Click(object sender, EventArgs e)
         {
-            // _ScheduleTest(clsTestType.enTestType.VisionTest);
-
-            MessageBox.Show(
-            "This Feature Is Not Implemented Yet!",
-            "Not Ready!",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
+            _ScheduleTest(clsTestType.enTestType.VisionTest);
         }
 
         private void mischeduleWrittenTest_Click(object sender, EventArgs e)
         {
-            // _ScheduleTest(clsTestType.enTestType.WrittenTest);
-
-            MessageBox.Show(
-            "This Feature Is Not Implemented Yet!",
-            "Not Ready!",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
+            _ScheduleTest(clsTestType.enTestType.WrittenTest);
         }
 
         private void mischeduleStreetTest_Click(object sender, EventArgs e)
         {
-            // _ScheduleTest(clsTestType.enTestType.StreetTest);
-
-            MessageBox.Show(
-            "This Feature Is Not Implemented Yet!",
-            "Not Ready!",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
+            _ScheduleTest(clsTestType.enTestType.StreetTest);
         }
 
         private void miIssueDrivingLicenseFirstTime_Click(object sender, EventArgs e)

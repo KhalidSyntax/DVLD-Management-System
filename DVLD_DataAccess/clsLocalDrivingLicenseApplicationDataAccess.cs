@@ -377,14 +377,12 @@ namespace DVLD_DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"
-                    SELECT TOP 1 1 AS Found
-                    FROM LocalDrivingLicenseApplications 
-                    INNER JOIN TestAppointments 
-                        ON LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = TestAppointments.LocalDrivingLicenseApplicationID
-                    WHERE LocalDrivingLicenseApplications.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
-                      AND TestAppointments.TestTypeID = @TestTypeID
-                      AND isLocked = 0
-                    ORDER BY TestAppointments.TestAppointmentID DESC;";
+                            SELECT 1
+                            FROM TestAppointments
+                            WHERE 
+                            LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
+                            AND TestTypeID = @TestTypeID
+                            AND IsLocked = 0;";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
@@ -394,17 +392,15 @@ namespace DVLD_DataAccess
             {
                 connection.Open();
 
-                object result = command.ExecuteScalar();
+                object value = command.ExecuteScalar();
 
-                if (result != null)
-                {
+                if (value != null)
                     Result = true;
-                }
             }
             catch (Exception)
             {
-                // Console.WriteLine("Error: " + ex.Message);
                 Result = false;
+                // Console.WriteLine("Error: " + ex.Message);
             }
             finally
             {
@@ -412,6 +408,46 @@ namespace DVLD_DataAccess
             }
 
             return Result;
+        }
+
+        public static DateTime GetLastTestAppointmentDate(int LocalDrivingLicenseApplicationID, int TestTypeID)
+        {
+            DateTime result = DateTime.Now;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"
+                    SELECT Top 1 TestAppointmentDate
+                    FROM TestAppointments 
+                    WHERE LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
+                    AND TestTypeID = @TestTypeID
+                    Order By TestAppointmentID Desc;";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);
+            command.Parameters.AddWithValue("@TestTypeID", TestTypeID);
+
+            try
+            {
+                connection.Open();
+
+                object value = command.ExecuteScalar();
+
+                if (value != null && DateTime.TryParse(value.ToString(), out DateTime dt))
+                {
+                    result = dt;
+                }
+            }
+            catch (Exception)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return result;
         }
     }
 }

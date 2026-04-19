@@ -309,7 +309,7 @@ namespace DVLD_DataAccess
             SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
 
             string query = @"SELECT TestAppointmentID,
-                                    AppointmentDate,
+                                    TestAppointmentDate,
                                     PaidFees,
                                     IsLocked
                              FROM TestAppointments

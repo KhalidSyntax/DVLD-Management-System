@@ -267,30 +267,28 @@ namespace DVLD_Business
                 (int)TestTypeID);
         }
 
-        // Later Explain
+        public clsTest GetLastTestPerTestType(clsTestType.enTestType TestTypeID)
+        {
+            return clsTest.FindLastTestPerPersonAndLicenseClass(
+                this.ApplicantPersonID,
+                this.LicenseClassID,
+                TestTypeID);
+        }
 
-        //public clsTest GetLastTestPerTestType(clsTestType.enTestType TestTypeID)
-        //{
-        //    return clsTest.FindLastTestPerPersonAndLicenseClass(
-        //        this.ApplicantPersonID,
-        //        this.LicenseClassID,
-        //        TestTypeID);
-        //}
+        public byte GetPassedTestCount()
+        {
+            return clsTest.GetPassedTestCount(this.LocalDrivingLicenseApplicationID);
+        }
 
-        //public byte GetPassedTestCount()
-        //{
-        //    return clsTest.GetPassedTestCount(this.LocalDrivingLicenseApplicationID);
-        //}
+        public bool PassedAllTests()
+        {
+            return clsTest.PassedAllTests(this.LocalDrivingLicenseApplicationID);
+        }
 
-        //public bool PassedAllTests()
-        //{
-        //    return clsTest.PassedAllTests(this.LocalDrivingLicenseApplicationID);
-        //}
-
-        //public static bool PassedAllTests(int LocalDrivingLicenseApplicationID)
-        //{
-        //    return clsTest.PassedAllTests(LocalDrivingLicenseApplicationID);
-        //}
+        public static bool PassedAllTests(int LocalDrivingLicenseApplicationID)
+        {
+            return clsTest.PassedAllTests(LocalDrivingLicenseApplicationID);
+        }
 
         //public int IssueLicenseForTheFirstTime(string Notes, int CreatedByUserID)
         //{

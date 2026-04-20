@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace DVLD_DataAccess
 {
@@ -233,9 +232,6 @@ namespace DVLD_DataAccess
 
             return dt;
         }
-
-
-        // Later Explain
 
         public static bool DoesPassTestType(int LocalDrivingLicenseApplicationID, int TestTypeID)
         {

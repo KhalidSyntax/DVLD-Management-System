@@ -374,11 +374,10 @@ namespace DVLD_DataAccess
 
             string query = @"
                             SELECT 1
-                            FROM TestAppointments
-                            WHERE 
-                            LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
-                            AND TestTypeID = @TestTypeID
-                            AND IsLocked = 0;";
+                            FROM TestAppointments TA
+                            WHERE TA.LocalDrivingLicenseApplicationID = @LocalDrivingLicenseApplicationID
+                            AND TA.TestTypeID = @TestTypeID
+                            AND TA.IsLocked = 0;";
 
             SqlCommand command = new SqlCommand(query, connection);
             command.Parameters.AddWithValue("@LocalDrivingLicenseApplicationID", LocalDrivingLicenseApplicationID);

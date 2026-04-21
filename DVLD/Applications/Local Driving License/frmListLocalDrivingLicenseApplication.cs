@@ -254,9 +254,9 @@ namespace DVLD.Applications
 
             bool IsNew = localDrivingLicenseApplication.ApplicationStatus ==
                          clsApplication.enApplicationStatus.New;
-            // int PassedTests = localDrivingLicenseApplication.GetPassedTestsCount();
+            byte PassedTests = localDrivingLicenseApplication.GetPassedTestCount();
 
-            // miDeleteApplication.Enabled = IsNew && PassedTests == 0;
+            miDeleteApplication.Enabled = IsNew && PassedTests == 0;
             miCancelApplication.Enabled = IsNew;
 
             // bool LicenseExists = localDrivingLicenseApplication.IsLicenseIssued();

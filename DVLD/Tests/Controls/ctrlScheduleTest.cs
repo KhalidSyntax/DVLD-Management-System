@@ -76,6 +76,31 @@ namespace DVLD
             dtpTestDate.ShowUpDown = true;
         }
 
+        private void _CalculateTotalFees(bool useSavedFees = false)
+        {
+            float testFees;
+
+            if (useSavedFees)
+                testFees = Convert.ToSingle(lblFees.Text);
+            else
+                testFees = clsTestType.Find(_TestTypeID).TestTypeFees;
+
+            if (_CreationMode == enCreationMode.RetakeTestSchedule)
+            {
+                float retakeFees = clsApplicationType.Find(
+                    (int)clsApplication.enApplicationType.RetakeTest
+                ).ApplicationTypeFees;
+
+                lblTotalFees.Text = (testFees + retakeFees).ToString();
+            }
+            else
+            {
+                lblTotalFees.Text = testFees.ToString();
+            }
+
+            lblFees.Text = testFees.ToString();
+        }
+
         public void LoadInfo(int LocalDrivingLicenseApplicationID, int TestAppointmentID = -1)
         {
             if (TestAppointmentID == -1)
@@ -115,13 +140,12 @@ namespace DVLD
                 lblTitle.Text = "Schedule Retake Test";
                 gbRetakeTestInfo.Enabled = true;
 
-                lblRetakeTestAppID.Text = "0";
                 lblRetakeAppFees.Text =
                     clsApplicationType.Find(
                         (int)clsApplication.enApplicationType.RetakeTest).
                         ApplicationTypeFees.ToString();
 
-                dtpTestDate.MinDate = lastDate > DateTime.Now ? lastDate : DateTime.Now;
+                dtpTestDate.MinDate = lastDate;
             }
             else
             {
@@ -147,7 +171,8 @@ namespace DVLD
             {
                 _TestAppointment = new clsTestAppointment();
 
-                lblFees.Text = clsTestType.Find(_TestTypeID).TestTypeFees.ToString();
+                _CalculateTotalFees();
+
                 lblRetakeTestAppID.Text = "N/A";
 
                 if (!_HandleActiveTestAppointmentConstraint())
@@ -174,9 +199,7 @@ namespace DVLD
                     return;
                 }
 
-                lblTotalFees.Text = (Convert.ToSingle(lblFees.Text) +
-                                    Convert.ToSingle(lblRetakeAppFees.Text)).
-                                    ToString();
+                _CalculateTotalFees(true);
 
                 if (!_HandleAppointmentLockedConstraint())
                     return;
@@ -217,6 +240,7 @@ namespace DVLD
             {
                 lblRetakeTestAppID.Text = _TestAppointment.RetakeTestApplicationID.ToString();
                 lblRetakeAppFees.Text = _TestAppointment.RetakeTestApplicationInfo.PaidFees.ToString();
+                _CalculateTotalFees(true);
 
                 lblTitle.Text = "Schedule Retake Test";
                 gbRetakeTestInfo.Enabled = true;
@@ -334,6 +358,7 @@ namespace DVLD
                     return false;
                 }
                 _TestAppointment.RetakeTestApplicationID = Application.ApplicationID;
+                lblRetakeTestAppID.Text = _TestAppointment.RetakeTestApplicationID.ToString();
             }
             return true; 
         }

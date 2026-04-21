@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
+using static DVLD_Business.clsTestType;
 
 namespace DVLD.Tests
 {
@@ -88,14 +89,25 @@ namespace DVLD.Tests
             lblRecordsCount.Text = dgvLicenseTestAppointments.Rows.Count.ToString();
         }
 
+        private void OpenScheduleForm()
+        {
+            frmScheduleTest frm = new frmScheduleTest(
+                _LocalDrivingLicenseApplicationID,
+                _TestTypeID);
+
+            frm.ShowDialog();
+            _RefreshTestAppointmentsList();
+        }
+
         private void btnAddTestAppointment_Click(object sender, EventArgs e)
         {
-            clsLocalDrivingLicenseApplication LocalDrivingLicenseApplication =
-                clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(
+            clsLocalDrivingLicenseApplication
+                localDrivingLicenseApplication =
+                clsLocalDrivingLicenseApplication
+                .FindByLocalDrivingAppLicenseID(
                     _LocalDrivingLicenseApplicationID);
 
-            if (LocalDrivingLicenseApplication.
-                IsThereAnActiveScheduledTest(_TestTypeID))
+            if (localDrivingLicenseApplication.IsThereAnActiveScheduledTest(_TestTypeID))
             {
                 MessageBox.Show(
                 "Person Already have an active appointment for this test, You cannot add new appointment",
@@ -106,53 +118,31 @@ namespace DVLD.Tests
                 return;
             }
 
-            //clsTest LastTest = LocalDrivingLicenseApplication.GetLastTestPerTestType(_TestTypeID);
+            clsTest lastTest = localDrivingLicenseApplication.GetLastTestPerTestType(_TestTypeID);
 
-            //if (LastTest == null)
-            //{
-            //    frmScheduleTest frm = new frmScheduleTest(
-            //        _LocalDrivingLicenseApplicationID,
-            //        _TestTypeID);
+            if (lastTest == null)
+            {
+                OpenScheduleForm();
+                return;
+            }
 
-            //    frm.ShowDialog();
-            //    _RefreshTestAppointmentsList();
+            if (lastTest != null && lastTest.TestResult == true)
+            {
+                MessageBox.Show(
+                "Already passed this test.",
+                "Not Allowed",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
 
-            //    return;
-            //}
-
-            //if(LastTest.TestResult == true)
-            //{
-            //    MessageBox.Show(
-            //    "This person already passed this test before, You can only retake failled test",
-            //    "Not allowed",
-            //    MessageBoxButtons.OK,
-            //    MessageBoxIcon.Error);
-
-            //    return;
-            //}
-
-            //frmScheduleTest frm2 = new frmScheduleTest(
-            //    LastTest.TestAppointmentInfo.LocalDrivingLicenseApplicationID,
-            //    _TestTypeID);
-
-            //frm2.ShowDialog();
-            //_RefreshTestAppointmentsList();
+                return;
+            }
+            OpenScheduleForm();
         }
 
         private void miEdit_Click(object sender, EventArgs e)
         {
             if (dgvLicenseTestAppointments.CurrentRow == null)
                 return;
-
-            bool isLocked = Convert.ToBoolean(
-                dgvLicenseTestAppointments.CurrentRow.Cells[3].Value
-            );
-
-            if (isLocked)
-            {
-                MessageBox.Show("Locked!");
-                return;
-            }
 
             int AppointmentID = ((int)dgvLicenseTestAppointments.CurrentRow.Cells[0].Value);
 
@@ -166,14 +156,14 @@ namespace DVLD.Tests
 
         private void mitakeTest_Click(object sender, EventArgs e)
         {
-            //int AppointmentID = ((int)dgvLicenseTestAppointments.CurrentRow.Cells[0].Value);
+            int AppointmentID = ((int)dgvLicenseTestAppointments.CurrentRow.Cells[0].Value);
 
-            //frmTakeTest frm = new frmTakeTest(
-            //    _TestAppointmentID,
-            //    _TestTypeID);
+            frmTakeTest frm = new frmTakeTest(
+                AppointmentID,
+                _TestTypeID);
 
-            //frm.ShowDialog();
-            //_RefreshTestAppointmentsList();
+            frm.ShowDialog();
+            _RefreshTestAppointmentsList();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

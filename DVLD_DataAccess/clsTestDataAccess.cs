@@ -148,6 +148,10 @@ namespace DVLD_DataAccess
                             VALUES
                             (@TestAppointmentID, @TestResult, @Notes, @CreatedByUserID);
 
+                            UPDATE TestAppointments
+                            SET IsLocked = 1
+                            WHERE TestAppointmentID = @TestAppointmentID;
+
                             SELECT SCOPE_IDENTITY();";
 
             SqlCommand command = new SqlCommand(query, connection);

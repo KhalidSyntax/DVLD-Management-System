@@ -25,6 +25,21 @@ namespace DVLD.Tests
         {
             ctrlScheduleTest1.TestTypeID = _TestTypeID;
             ctrlScheduleTest1.LoadInfo(_LocalDrivingLicenseApplicationID, _TestAppointmentID);
+
+            if (_TestAppointmentID != -1)
+            {
+                clsTestAppointment appointment =
+                    clsTestAppointment.FindByTestAppointmentID(_TestAppointmentID);
+
+                if (appointment != null && appointment.IsLocked)
+                {
+                    this.Text = "View Test Appointment";
+                }
+                else
+                {
+                    this.Text = "Edit Test Appointment";
+                }
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

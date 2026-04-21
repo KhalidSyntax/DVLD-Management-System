@@ -46,10 +46,8 @@ namespace DVLD
             lblAppliedFor.Text =
                 _LocalDrivingLicenseApplication.LicenseClassInfo.ClassName;
 
-            lblPassedTests.Text = "3/3";
-
-            //lblPassedTests.Text = 
-            //    _LocalDrivingLicenseApplication.GetPassedTestCount().ToString() + "/3";
+            lblPassedTests.Text =
+                _LocalDrivingLicenseApplication.GetPassedTestCount().ToString() + "/3";
 
             ctrlApplicationBasicInfo1.LoadByApplicationID(
                 _LocalDrivingLicenseApplication.ApplicationID);

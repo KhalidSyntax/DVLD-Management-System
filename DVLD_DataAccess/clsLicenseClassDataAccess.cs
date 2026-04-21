@@ -141,5 +141,145 @@ namespace DVLD_DataAccess
             }
             return dt;
         }
+
+        public static int AddNewLicenseClass(
+            string ClassName,
+            string ClassDescription,
+            byte MinimumAllowedAge,
+            byte DefaultValidityLength,
+            float ClassFees)
+        {
+            int LicenseClassID = -1;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"
+                INSERT INTO LicenseClasses
+                (
+                    ClassName,
+                    ClassDescription,
+                    MinimumAllowedAge,
+                    DefaultValidityLength,
+                    ClassFees
+                )
+                VALUES
+                (
+                    @ClassName,
+                    @ClassDescription,
+                    @MinimumAllowedAge,
+                    @DefaultValidityLength,
+                    @ClassFees
+                );
+
+                SELECT SCOPE_IDENTITY();";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@ClassName", ClassName);
+            command.Parameters.AddWithValue("@ClassDescription", ClassDescription);
+            command.Parameters.AddWithValue("@MinimumAllowedAge", MinimumAllowedAge);
+            command.Parameters.AddWithValue("@DefaultValidityLength", DefaultValidityLength);
+            command.Parameters.AddWithValue("@ClassFees", ClassFees);
+
+            try
+            {
+                connection.Open();
+
+                object result = command.ExecuteScalar();
+
+                if (result != null && int.TryParse(result.ToString(), out int insertedID))
+                {
+                    LicenseClassID = insertedID;
+                }
+            }
+            catch (Exception)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return LicenseClassID;
+        }
+
+        public static bool UpdateLicenseClass(
+            int LicenseClassID,
+            string ClassName,
+            string ClassDescription,
+            byte MinimumAllowedAge,
+            byte DefaultValidityLength,
+            float ClassFees)
+        {
+            int rowsAffected = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"
+                UPDATE LicenseClasses
+                SET
+                    ClassName = @ClassName,
+                    ClassDescription = @ClassDescription,
+                    MinimumAllowedAge = @MinimumAllowedAge,
+                    DefaultValidityLength = @DefaultValidityLength,
+                    ClassFees = @ClassFees
+                WHERE LicenseClassID = @LicenseClassID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+            command.Parameters.AddWithValue("@ClassName", ClassName);
+            command.Parameters.AddWithValue("@ClassDescription", ClassDescription);
+            command.Parameters.AddWithValue("@MinimumAllowedAge", MinimumAllowedAge);
+            command.Parameters.AddWithValue("@DefaultValidityLength", DefaultValidityLength);
+            command.Parameters.AddWithValue("@ClassFees", ClassFees);
+
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
+        }
+
+        public static bool DeleteLicenseClass(int LicenseClassID)
+        {
+            int rowsAffected = 0;
+
+            SqlConnection connection = new SqlConnection(clsDataAccessSettings.ConnectionString);
+
+            string query = @"DELETE FROM LicenseClasses
+                     WHERE LicenseClassID = @LicenseClassID";
+
+            SqlCommand command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@LicenseClassID", LicenseClassID);
+
+            try
+            {
+                connection.Open();
+                rowsAffected = command.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                // Console.WriteLine("Error: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return (rowsAffected > 0);
+        }
     }
 }

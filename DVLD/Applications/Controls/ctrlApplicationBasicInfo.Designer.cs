@@ -194,7 +194,7 @@
             this.lblApplicantName.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApplicantName.Location = new System.Drawing.Point(154, 188);
             this.lblApplicantName.Name = "lblApplicantName";
-            this.lblApplicantName.Size = new System.Drawing.Size(98, 19);
+            this.lblApplicantName.Size = new System.Drawing.Size(262, 19);
             this.lblApplicantName.TabIndex = 60;
             this.lblApplicantName.Text = "[????]";
             this.lblApplicantName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -204,7 +204,7 @@
             this.lblType.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblType.Location = new System.Drawing.Point(154, 151);
             this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(227, 19);
+            this.lblType.Size = new System.Drawing.Size(262, 19);
             this.lblType.TabIndex = 59;
             this.lblType.Text = "[???]";
             this.lblType.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,7 +214,7 @@
             this.lblFees.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFees.Location = new System.Drawing.Point(154, 109);
             this.lblFees.Name = "lblFees";
-            this.lblFees.Size = new System.Drawing.Size(98, 19);
+            this.lblFees.Size = new System.Drawing.Size(111, 19);
             this.lblFees.TabIndex = 58;
             this.lblFees.Text = "[$$$]";
             this.lblFees.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -320,7 +320,7 @@
             this.lblApplicationID.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApplicationID.Location = new System.Drawing.Point(154, 37);
             this.lblApplicationID.Name = "lblApplicationID";
-            this.lblApplicationID.Size = new System.Drawing.Size(98, 19);
+            this.lblApplicationID.Size = new System.Drawing.Size(111, 19);
             this.lblApplicationID.TabIndex = 44;
             this.lblApplicationID.Text = "[???]";
             this.lblApplicationID.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

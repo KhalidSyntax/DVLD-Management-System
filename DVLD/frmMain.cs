@@ -137,5 +137,10 @@ namespace DVLD
         {
             OpenForm(new frmListLocalDrivingLicenseApplications());
         }
+
+        private void retakeTestToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmListLocalDrivingLicenseApplications());
+        }
     }
 }

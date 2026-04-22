@@ -453,8 +453,6 @@ namespace DVLD_Business
 
         //    NewLicense.CreatedByUserID = CreatedByUserID;
 
-
-
         //    if(!NewLicense.Save())
         //    {
         //        return null;
@@ -510,7 +508,7 @@ namespace DVLD_Business
         //    NewLicense.IssueReason = IssueReason;
         //    NewLicense.PaidFees = 0;
         //    NewLicense.IsActive = true;
-        //    NewLicense.Notes = Notes;
+        //    NewLicense.Notes = this.Notes;
         //    NewLicense.CreatedByUserID = CreatedByUserID;
 
         //    if (!NewLicense.Save())

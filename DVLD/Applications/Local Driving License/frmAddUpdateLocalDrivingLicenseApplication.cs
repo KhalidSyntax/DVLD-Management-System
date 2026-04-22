@@ -199,16 +199,16 @@ namespace DVLD.Applications
                 return;
             }
 
-            //if (clsLicense.IsLicenseExistByPersonID(_SelectedPersonID, LicenseClassID))
-            //{
-            //    MessageBox.Show(
-            //        "Person already has a license with the same applied driving class, choose different driving class",
-            //        "Not allowed",
-            //        MessageBoxButtons.OK,
-            //        MessageBoxIcon.Error
-            //    );
-            //    return;
-            //}
+            if (clsLicense.IsLicenseExistByPersonID(_SelectedPersonID, LicenseClassID))
+            {
+                MessageBox.Show(
+                    "Person already has a license with the same applied driving class, choose different driving class",
+                    "Not allowed",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+                return;
+            }
 
             if (MessageBox.Show(
                     "Do You Want To Save Data?",

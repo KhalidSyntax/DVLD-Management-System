@@ -4,7 +4,7 @@ using DVLD_Business;
 using DVLD.Tests;
 using System.Drawing;
 using System.Windows.Forms;
-//using DVLD.DriverLicense;
+using DVLD.DriverLicense;
 //using DVLD.Licenses.International_License;
 
 namespace DVLD.Applications
@@ -259,20 +259,17 @@ namespace DVLD.Applications
             miDeleteApplication.Enabled = IsNew && PassedTests == 0;
             miCancelApplication.Enabled = IsNew;
 
-            // bool LicenseExists = localDrivingLicenseApplication.IsLicenseIssued();
-            // miIssueDrivingLicenseFirstTime.Enabled = (PassedTests == 3) && !LicenseExists;
-            // miShowLicense.Enabled = LicenseExists;
+            bool LicenseExists = localDrivingLicenseApplication.IsLicenseIssued();
+            miIssueDrivingLicenseFirstTime.Enabled = (PassedTests == 3) && !LicenseExists;
+            miShowLicense.Enabled = LicenseExists;
 
-            // miEditApplication.Enabled = !LicenseExists && IsNew;
-
+            miEditApplication.Enabled = !LicenseExists && IsNew;
 
             bool PassedVisionTest = localDrivingLicenseApplication.
                 DoesPassTestType(clsTestType.enTestType.VisionTest);
 
-
             bool PassedWrittenTest = localDrivingLicenseApplication.
                 DoesPassTestType(clsTestType.enTestType.WrittenTest);
-            
             
             bool PassedStreetTest = localDrivingLicenseApplication.
                 DoesPassTestType(clsTestType.enTestType.StreetTest);
@@ -291,9 +288,7 @@ namespace DVLD.Applications
             if (miScheduleTests.Enabled)
             {
                 mischeduleVisionTest.Enabled = !PassedVisionTest;
-
                 mischeduleWrittenTest.Enabled = PassedVisionTest && !PassedWrittenTest;
-
                 mischeduleStreetTest.Enabled = PassedVisionTest && PassedWrittenTest && !PassedStreetTest;
             }
         }
@@ -329,21 +324,15 @@ namespace DVLD.Applications
 
         private void miIssueDrivingLicenseFirstTime_Click(object sender, EventArgs e)
         {
-            //int localDrivingLicenseApplicationID =
-            //    (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+            int localDrivingLicenseApplicationID =
+                (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
 
-            //frmIssueDriverLicenseFirstTime frm =
-            //    new frmIssueDriverLicenseFirstTime(
-            //        LocalDrivingLicenseApplicationID);
+            frmIssueDriverLicenseFirstTime frm =
+                new frmIssueDriverLicenseFirstTime(
+                    localDrivingLicenseApplicationID);
 
-            //frm.ShowDialog();
-            //_RefreshApplicationsList();
-
-            MessageBox.Show(
-            "This Feature Is Not Implemented Yet!",
-            "Not Ready!",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
+            frm.ShowDialog();
+            _RefreshApplicationsList();
         }
 
         private void miShowLicense_Click(object sender, EventArgs e)

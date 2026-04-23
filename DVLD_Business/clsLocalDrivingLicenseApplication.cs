@@ -292,6 +292,12 @@ namespace DVLD_Business
 
         public int IssueLicenseForTheFirstTime(string Notes, int CreatedByUserID)
         {
+            if (!PassedAllTests())
+                return -1;
+
+            if (GetActiveLicenseID() != -1)
+                return -1;
+
             int DriverID = -1;
 
             clsDriver Driver = clsDriver.FindByPersonID(this.ApplicantPersonID);

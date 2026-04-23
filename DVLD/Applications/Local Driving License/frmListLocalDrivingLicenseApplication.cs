@@ -337,34 +337,28 @@ namespace DVLD.Applications
 
         private void miShowLicense_Click(object sender, EventArgs e)
         {
-            //int localDrivingLicenseApplicationID =
-            //    (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+            int localDrivingLicenseApplicationID =
+                (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
 
-            //int LicenseID = 
-            //clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(
-            //        localDrivingLicenseApplicationID).GetActiveLicenseID();
+            int LicenseID =
+            clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(
+                    localDrivingLicenseApplicationID).GetActiveLicenseID();
 
-            //if(LicenseID != -1)
-            //{
-            //    frmShowLicenseInfo frm =
-            //        new frmShowLicenseInfo(LicenseID);
+            if (LicenseID != -1)
+            {
+                frmShowLicenseInfo frm =
+                    new frmShowLicenseInfo(LicenseID);
 
-            //    frm.ShowDialog();
-            //}
-            //else
-            //{
-            //    MessageBox.Show(
-            //    "No License Found!",
-            //    "No License",
-            //    MessageBoxButtons.OK,
-            //    MessageBoxIcon.Error);
-            //}
-
-            MessageBox.Show(
-            "This Feature Is Not Implemented Yet!",
-            "Not Ready!",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(
+                "No License Found!",
+                "No License",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Error);
+            }
         }
 
         private void mishowPersonLicenseHistory_Click(object sender, EventArgs e)

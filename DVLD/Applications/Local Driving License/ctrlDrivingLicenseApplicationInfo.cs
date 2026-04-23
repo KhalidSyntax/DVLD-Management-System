@@ -1,8 +1,6 @@
 ﻿using System;
-using DVLD.Classes;
-using DVLD.People;
-using DVLD.Properties;
 using DVLD_Business;
+using DVLD.DriverLicense;
 using System.Windows.Forms;
 
 namespace DVLD
@@ -37,8 +35,8 @@ namespace DVLD
 
         private void _FillLocalDrivingLicenseApplicationInfo()
         {
-            // _LicenseID = _LocalDrivingLicenseApplication.GetActiveLicenseID();
-            // llShowLicenseInfo.Enabled = (_LicenseID != -1);
+            _LicenseID = _LocalDrivingLicenseApplication.GetActiveLicenseID();
+            llShowLicenseInfo.Enabled = (_LicenseID != -1);
 
             lblLocalDrivingLicenseApplicationID.Text =
                 _LocalDrivingLicenseApplication.LocalDrivingLicenseApplicationID.ToString();
@@ -91,10 +89,10 @@ namespace DVLD
 
         private void llShowLicenseInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //frmShowLicenseInfo frm = new frmShowLicenseInfo(
-            //    _LocalDrivingLicenseApplication.GetActiveLicenseID());
+            frmShowLicenseInfo frm = new frmShowLicenseInfo(
+                _LocalDrivingLicenseApplication.GetActiveLicenseID());
 
-            //frm.ShowDialog();
+            frm.ShowDialog();
         }
     }
 }

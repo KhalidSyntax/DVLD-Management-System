@@ -4,6 +4,7 @@ using DVLD.Login;
 using DVLD.People;
 using DVLD.Test;
 using DVLD.User;
+using DVLD.Licenses;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -141,6 +142,11 @@ namespace DVLD
         private void retakeTestToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenForm(new frmListLocalDrivingLicenseApplications());
+        }
+
+        private void renewDrivingLiceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmRenewLocalDrivingLicenseApplication());
         }
     }
 }

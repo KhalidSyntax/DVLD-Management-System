@@ -30,10 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbFilters = new System.Windows.Forms.GroupBox();
+            this.btnFind = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.txtLicenseID = new System.Windows.Forms.TextBox();
             this.ctrlDriverLicenseInfo1 = new DVLD.ctrlDriverLicenseInfo();
-            this.btnFind = new System.Windows.Forms.Button();
             this.epLicenseValidation = new System.Windows.Forms.ErrorProvider(this.components);
             this.gbFilters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.epLicenseValidation)).BeginInit();
@@ -51,19 +51,31 @@
             this.gbFilters.TabStop = false;
             this.gbFilters.Text = "Filter:";
             // 
+            // btnFind
+            // 
+            this.btnFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFind.Image = global::DVLD.Properties.Resources.License_View_323;
+            this.btnFind.Location = new System.Drawing.Point(313, 25);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(40, 30);
+            this.btnFind.TabIndex = 5;
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(3, 30);
+            this.label11.Location = new System.Drawing.Point(8, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(99, 21);
+            this.label11.Size = new System.Drawing.Size(83, 21);
             this.label11.TabIndex = 66;
             this.label11.Text = "License ID:";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtLicenseID
             // 
-            this.txtLicenseID.Location = new System.Drawing.Point(108, 28);
+            this.txtLicenseID.Location = new System.Drawing.Point(95, 28);
             this.txtLicenseID.Name = "txtLicenseID";
             this.txtLicenseID.Size = new System.Drawing.Size(199, 25);
             this.txtLicenseID.TabIndex = 1;
@@ -78,18 +90,6 @@
             this.ctrlDriverLicenseInfo1.Name = "ctrlDriverLicenseInfo1";
             this.ctrlDriverLicenseInfo1.Size = new System.Drawing.Size(714, 337);
             this.ctrlDriverLicenseInfo1.TabIndex = 1;
-            // 
-            // btnFind
-            // 
-            this.btnFind.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnFind.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFind.Image = global::DVLD.Properties.Resources.License_View_323;
-            this.btnFind.Location = new System.Drawing.Point(313, 25);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(40, 30);
-            this.btnFind.TabIndex = 5;
-            this.btnFind.UseVisualStyleBackColor = true;
-            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // epLicenseValidation
             // 

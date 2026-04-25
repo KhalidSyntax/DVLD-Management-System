@@ -141,6 +141,7 @@
             this.renewDrivingLiceToolStripMenuItem.Name = "renewDrivingLiceToolStripMenuItem";
             this.renewDrivingLiceToolStripMenuItem.Size = new System.Drawing.Size(356, 38);
             this.renewDrivingLiceToolStripMenuItem.Text = "Renew Driving License";
+            this.renewDrivingLiceToolStripMenuItem.Click += new System.EventHandler(this.renewDrivingLiceToolStripMenuItem_Click);
             // 
             // replacementForLostOrDamagedLicenseToolStripMenuItem
             // 

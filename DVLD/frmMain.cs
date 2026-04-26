@@ -148,5 +148,10 @@ namespace DVLD
         {
             OpenForm(new frmRenewLocalDrivingLicenseApplication());
         }
+
+        private void replacementForLostOrDamagedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmReplaceLostOrDamagedLicenseApplication());
+        }
     }
 }

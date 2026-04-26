@@ -282,7 +282,7 @@
             this.lblNotes.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNotes.Location = new System.Drawing.Point(172, 291);
             this.lblNotes.Name = "lblNotes";
-            this.lblNotes.Size = new System.Drawing.Size(140, 19);
+            this.lblNotes.Size = new System.Drawing.Size(211, 19);
             this.lblNotes.TabIndex = 93;
             this.lblNotes.Text = "[???]";
             this.lblNotes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -301,7 +301,7 @@
             this.lblIssueReason.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblIssueReason.Location = new System.Drawing.Point(172, 253);
             this.lblIssueReason.Name = "lblIssueReason";
-            this.lblIssueReason.Size = new System.Drawing.Size(140, 19);
+            this.lblIssueReason.Size = new System.Drawing.Size(211, 19);
             this.lblIssueReason.TabIndex = 91;
             this.lblIssueReason.Text = "[???]";
             this.lblIssueReason.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

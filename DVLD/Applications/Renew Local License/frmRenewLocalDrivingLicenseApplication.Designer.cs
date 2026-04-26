@@ -67,7 +67,7 @@
             this.btnRenewLicense = new System.Windows.Forms.Button();
             this.llShowLicensesHistory = new System.Windows.Forms.LinkLabel();
             this.llShowNewLicensesInfo = new System.Windows.Forms.LinkLabel();
-            this.ctrlDriverLicenseInfoWithFilter1 = new DVLD.Licenses.Local_Licenses.Controls.ctrlDriverLicenseInfoWithFilter();
+            this.ctrlDriverLicenseInfoWithFilter1 = new DVLD.ctrlDriverLicenseInfoWithFilter();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,7 +122,7 @@
             this.groupBox1.Size = new System.Drawing.Size(708, 286);
             this.groupBox1.TabIndex = 50;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Application Basic Info";
+            this.groupBox1.Text = "Application New License Info";
             // 
             // lblTotalFees
             // 
@@ -501,11 +501,11 @@
             this.ctrlDriverLicenseInfoWithFilter1.BackColor = System.Drawing.Color.White;
             this.ctrlDriverLicenseInfoWithFilter1.FilterEnabled = true;
             this.ctrlDriverLicenseInfoWithFilter1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ctrlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(4, 48);
+            this.ctrlDriverLicenseInfoWithFilter1.Location = new System.Drawing.Point(2, 44);
             this.ctrlDriverLicenseInfoWithFilter1.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlDriverLicenseInfoWithFilter1.Name = "ctrlDriverLicenseInfoWithFilter1";
             this.ctrlDriverLicenseInfoWithFilter1.Size = new System.Drawing.Size(720, 423);
-            this.ctrlDriverLicenseInfoWithFilter1.TabIndex = 0;
+            this.ctrlDriverLicenseInfoWithFilter1.TabIndex = 104;
             // 
             // frmRenewLocalDrivingLicenseApplication
             // 
@@ -513,13 +513,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(727, 804);
+            this.Controls.Add(this.ctrlDriverLicenseInfoWithFilter1);
             this.Controls.Add(this.llShowNewLicensesInfo);
             this.Controls.Add(this.llShowLicensesHistory);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnRenewLicense);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.ctrlDriverLicenseInfoWithFilter1);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -536,8 +536,6 @@
         }
 
         #endregion
-
-        private Licenses.Local_Licenses.Controls.ctrlDriverLicenseInfoWithFilter ctrlDriverLicenseInfoWithFilter1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label13;
@@ -577,5 +575,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.LinkLabel llShowLicensesHistory;
         private System.Windows.Forms.LinkLabel llShowNewLicensesInfo;
+        private ctrlDriverLicenseInfoWithFilter ctrlDriverLicenseInfoWithFilter1;
     }
 }

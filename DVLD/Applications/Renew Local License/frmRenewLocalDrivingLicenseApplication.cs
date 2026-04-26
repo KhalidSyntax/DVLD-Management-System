@@ -135,7 +135,7 @@ namespace DVLD.Licenses
                     SelectedLicenseInfo.
                     RenewLicense(txtNotes.Text.Trim(), clsGlobal.currentUser.UserID);
 
-                if(NewLicense == null)
+                if (NewLicense == null)
                 {
                     _ResetDefaultValues();
                     MessageBox.Show(

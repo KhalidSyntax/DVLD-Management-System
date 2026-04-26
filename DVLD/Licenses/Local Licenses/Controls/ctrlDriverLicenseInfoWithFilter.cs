@@ -2,7 +2,7 @@
 using DVLD_Business;
 using System.Windows.Forms;
 
-namespace DVLD.Licenses.Local_Licenses.Controls
+namespace DVLD
 {
     public partial class ctrlDriverLicenseInfoWithFilter : UserControl
     {
@@ -79,7 +79,7 @@ namespace DVLD.Licenses.Local_Licenses.Controls
         {
             if (String.IsNullOrWhiteSpace(txtLicenseID.Text))
             {
-                // e.Cancel = true;
+                e.Cancel = true;
                 epLicenseValidation.SetError(txtLicenseID, "Please enter a value for this field.");
             }
             else

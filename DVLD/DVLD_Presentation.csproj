@@ -91,6 +91,12 @@
     <Compile Include="Applications\Renew Local License\frmRenewLocalDrivingLicenseApplication.Designer.cs">
       <DependentUpon>frmRenewLocalDrivingLicenseApplication.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\Replace License\frmReplaceLostOrDamagedLicenseApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\Replace License\frmReplaceLostOrDamagedLicenseApplication.Designer.cs">
+      <DependentUpon>frmReplaceLostOrDamagedLicenseApplication.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmShowPersonLicenseHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\Renew Local License\frmRenewLocalDrivingLicenseApplication.resx">
       <DependentUpon>frmRenewLocalDrivingLicenseApplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Replace License\frmReplaceLostOrDamagedLicenseApplication.resx">
+      <DependentUpon>frmReplaceLostOrDamagedLicenseApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmShowPersonLicenseHistory.resx">
       <DependentUpon>frmShowPersonLicenseHistory.cs</DependentUpon>
@@ -712,12 +721,6 @@
   <ItemGroup>
     <None Include="Resources\money 322.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Applications\ReleaseDetainedLicense\" />
-    <Folder Include="Applications\ReplaceLost-OR-DamagedLicense\" />
-    <Folder Include="Licenses\Controls\" />
-    <Folder Include="Licenses\Detain License\" />
-    <Folder Include="Licenses\Interational Licenses\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

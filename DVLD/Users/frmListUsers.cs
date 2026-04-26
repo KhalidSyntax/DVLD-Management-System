@@ -168,39 +168,42 @@ namespace DVLD.User
 
         private void miDelete_Click(object sender, EventArgs e)
         {
-            int UserID = ((int)dgvUsers.CurrentRow.Cells[0].Value);
+            int UserID = (int)dgvUsers.CurrentRow.Cells[0].Value;
 
             if (UserID == clsGlobal.currentUser.UserID)
             {
                 MessageBox.Show(
-                    "Can't Delete This User because it is The Current User.",
-                    "Error",
+                    "You cannot delete the current logged-in user.",
+                    "Not Allowed",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+                    MessageBoxIcon.Warning);
                 return;
             }
 
             if (MessageBox.Show(
-                    "Are you sure you want to delete user [" + UserID + "]",
-                    "Confirm Delete",
-                    MessageBoxButtons.OKCancel,
-                    MessageBoxIcon.Question) == DialogResult.OK)
+                "Are you sure you want to delete this user?",
+                "Confirm Delete",
+                MessageBoxButtons.OKCancel,
+                MessageBoxIcon.Question) == DialogResult.OK)
             {
                 if (clsUser.DeleteUser(UserID))
                 {
-                    MessageBox.Show("User Deleted Successfully.",
-                        "Successful",
+                    MessageBox.Show(
+                        "User Deleted Successfully.",
+                        "Deleted",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
 
                     _RefreshUsersList();
                 }
                 else
+                {
                     MessageBox.Show(
                         "User was not deleted because it has data linked to it.",
-                        "Delete Failed",
+                        "Error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
+                }
             }
         }
 

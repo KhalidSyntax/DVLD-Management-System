@@ -41,8 +41,8 @@ namespace DVLD
 
             lblIsActive.Text = "[??]";
             lblDOB.Text = "[??/??/????]";
-            lblExpirationDate.Text = "[????]";
-            lblDriverID.Text = "[??/??/?????]";
+            lblExpirationDate.Text = "[??/??/?????]";
+            lblDriverID.Text = "[???]";
             lblIsDetainted.Text = "[??]";
 
             pbPersonImage.Image = Resources.Male_512;

@@ -154,5 +154,10 @@ namespace DVLD
         {
             OpenForm(new frmReplaceLostOrDamagedLicenseApplication());
         }
+
+        private void internationalLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmNewInternationalLicenseApplication());
+        }
     }
 }

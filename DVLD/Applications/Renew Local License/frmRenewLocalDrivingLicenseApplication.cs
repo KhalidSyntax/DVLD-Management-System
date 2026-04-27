@@ -119,6 +119,7 @@ namespace DVLD.Licenses
             lblCreatedBy.Text = clsGlobal.currentUser.UserID.ToString();
 
             btnRenewLicense.Enabled = false;
+            llShowLicensesHistory.Enabled = false;
             llShowNewLicensesInfo.Enabled = false;
         }
 
@@ -172,20 +173,14 @@ namespace DVLD.Licenses
 
         private void llShowLicensesHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //frmShowPersonLicenseHistory frm =
-            //new frmShowPersonLicenseHistory(
-            //    ctrlDriverLicenseInfoWithFilter1
-            //    .SelectedLicenseInfo
-            //    .DriverInfo
-            //    .PersonID);
+            frmShowPersonLicenseHistory frm =
+            new frmShowPersonLicenseHistory(
+                ctrlDriverLicenseInfoWithFilter1.
+                SelectedLicenseInfo.
+                DriverInfo.
+                PersonID);
 
-            //frm.ShowDialog();
-
-            MessageBox.Show(
-                "This Feature Is Not Implemented Yet!",
-                "Not Ready!",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Exclamation);
+            frm.ShowDialog();
         }
 
         private void llShowNewLicensesInfo_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -1,5 +1,6 @@
 ﻿using DVLD.Classes;
 using DVLD.DriverLicense;
+using DVLD.Licenses;
 using DVLD_Business;
 using System;
 using System.Windows.Forms;
@@ -93,6 +94,7 @@ namespace DVLD.Applications
             lblCreatedBy.Text = clsGlobal.currentUser.UserID.ToString();
 
             btnIssueReplacement.Enabled = false;
+            llShowLicensesHistory.Enabled = false;
             llShowNewLicensesInfo.Enabled = false;
 
             rbDamagedLicense.Checked = true;
@@ -155,20 +157,14 @@ namespace DVLD.Applications
 
         private void llShowLicensesHistory_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            //frmShowPersonLicenseHistory frm =
-            //new frmShowPersonLicenseHistory(
-            //    ctrlDriverLicenseInfoWithFilter1
-            //    .SelectedLicenseInfo
-            //    .DriverInfo
-            //    .PersonID);
+            frmShowPersonLicenseHistory frm =
+            new frmShowPersonLicenseHistory(
+                ctrlDriverLicenseInfoWithFilter1.
+                SelectedLicenseInfo.
+                DriverInfo.
+                PersonID);
 
-            //frm.ShowDialog();
-
-            MessageBox.Show(
-                "This Feature Is Not Implemented Yet!",
-                "Not Ready!",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Exclamation);
+            frm.ShowDialog();
         }
 
         private void rbDamgedLicense_CheckedChanged(object sender, EventArgs e)

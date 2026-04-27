@@ -2,6 +2,7 @@
 using System.Data;
 using DVLD_Business;
 using DVLD.Tests;
+using DVLD.Licenses;
 using System.Drawing;
 using System.Windows.Forms;
 using DVLD.DriverLicense;
@@ -363,27 +364,21 @@ namespace DVLD.Applications
 
         private void mishowPersonLicenseHistory_Click(object sender, EventArgs e)
         {
-            //int localDrivingLicenseApplicationID =
-            //    (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
+            int localDrivingLicenseApplicationID =
+                (int)dgvLocalDrivingLicenseApplications.CurrentRow.Cells[0].Value;
 
-            //clsLocalDrivingLicenseApplication localDrivingLicenseApplication =
-            //    clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(
-            //        localDrivingLicenseApplicationID);
+            clsLocalDrivingLicenseApplication localDrivingLicenseApplication =
+                clsLocalDrivingLicenseApplication.FindByLocalDrivingAppLicenseID(
+                    localDrivingLicenseApplicationID);
 
-            //if (localDrivingLicenseApplication == null)
-            //    return;
+            if (localDrivingLicenseApplication == null)
+                return;
 
-            //frmShowPersonLicenseHistory frm =
-            //    new frmShowPersonLicenseHistory(
-            //        localDrivingLicenseApplication.ApplicantPersonID);
+            frmShowPersonLicenseHistory frm =
+                new frmShowPersonLicenseHistory(
+                    localDrivingLicenseApplication.ApplicantPersonID);
 
-            //frm.ShowDialog();
-
-            MessageBox.Show(
-            "This Feature Is Not Implemented Yet!",
-            "Not Ready!",
-            MessageBoxButtons.OK,
-            MessageBoxIcon.Exclamation);
+            frm.ShowDialog();
         }
 
         private void dgvLocalDrivingLicenseApplications_DoubleClick(object sender, EventArgs e)

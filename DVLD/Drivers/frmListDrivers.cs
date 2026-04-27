@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using DVLD.People;
+using DVLD.Licenses;
 using DVLD_Business;
 using System.Drawing;
 using DVLD.DriverLicense;
@@ -142,11 +143,11 @@ namespace DVLD.Drivers
 
         private void miShowPersonLicenseHistory_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "This Feature Is Not Implemented Yet!",
-                "Not Ready!",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Exclamation);
+            frmShowPersonLicenseHistory frm =
+                new frmShowPersonLicenseHistory((int)dgvDrivers.CurrentRow.Cells[1].Value);
+
+            frm.ShowDialog();
+            _RefreshDriversList();
         }
 
         private void txtFilterValue_KeyPress(object sender, KeyPressEventArgs e)

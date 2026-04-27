@@ -146,14 +146,14 @@ namespace DVLD_Business
             return clsDriverDataAccess.IsDriverExist(PersonID);
         }
 
-        //public static DataTable GetLicenses(int DriverID)
-        //{
-        //    return clsLicense.GetDriverLicenses(DriverID);
-        //}
+        public static DataTable GetLicenses(int DriverID)
+        {
+            return clsLicense.GetDriverLicenses(DriverID);
+        }
 
-        //public static DataTable GetInternationalLicenses(int DriverID)
-        //{
-        //    return clsInternationalLicense.GetDriverInternationalLicenses(DriverID);
-        //}
+        public static DataTable GetInternationalLicenses(int DriverID)
+        {
+            return clsInternationalLicense.GetDriverInternationalLicenses(DriverID);
+        }
     }
 }

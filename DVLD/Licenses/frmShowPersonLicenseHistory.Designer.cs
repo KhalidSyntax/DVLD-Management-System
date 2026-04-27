@@ -50,9 +50,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::DVLD.Properties.Resources.PersonLicenseHistory_512;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 345);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 316);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(204, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(229, 129);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;

@@ -123,7 +123,7 @@ namespace DVLD_Business
             Mode = enMode.Update;
         }
 
-        public static clsApplication FindBaseApplication(int ApplicationID)
+        public static clsApplication Find(int ApplicationID)
         {
             int ApplicantPersonID = -1,
                 ApplicationTypeID = -1,

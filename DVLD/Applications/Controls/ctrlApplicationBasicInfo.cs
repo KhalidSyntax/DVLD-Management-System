@@ -60,7 +60,7 @@ namespace DVLD
         {
             _ApplicationID = ApplicationID;
             _Application =
-                clsApplication.FindBaseApplication(ApplicationID);
+                clsApplication.Find(ApplicationID);
 
             if (_Application == null)
             {

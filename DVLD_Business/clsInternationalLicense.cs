@@ -96,7 +96,7 @@ namespace DVLD_Business
                 ref CreatedByUserID,
                 ref IssueDate, ref ExpirationDate, ref IsActive))
             {
-                clsApplication Application = clsApplication.FindBaseApplication(ApplicationID);
+                clsApplication Application = clsApplication.Find(ApplicationID);
 
                 return new clsInternationalLicense(
                         InternationalLicenseID,

@@ -71,7 +71,7 @@ namespace DVLD_Business
                 ref ApplicationID,
                 ref LicenseClasseID))
             {
-                clsApplication Application = clsApplication.FindBaseApplication(ApplicationID);
+                clsApplication Application = clsApplication.Find(ApplicationID);
 
                 return new clsLocalDrivingLicenseApplication(
                         LocalDrivingLicenseApplicationID,
@@ -98,7 +98,7 @@ namespace DVLD_Business
                 ref LocalDrivingLicenseApplicationID,
                 ref LicenseClasseID))
             {
-                clsApplication Application = clsApplication.FindBaseApplication(ApplicationID);
+                clsApplication Application = clsApplication.Find(ApplicationID);
 
                 return new clsLocalDrivingLicenseApplication(
                         LocalDrivingLicenseApplicationID,

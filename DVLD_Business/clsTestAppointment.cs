@@ -63,7 +63,7 @@ namespace DVLD_Business
             get
             {
                 if (_RetakeTestApplicationInfo == null)
-                    _RetakeTestApplicationInfo = clsApplication.FindBaseApplication(
+                    _RetakeTestApplicationInfo = clsApplication.Find(
                         RetakeTestApplicationID);
 
                 return _RetakeTestApplicationInfo;

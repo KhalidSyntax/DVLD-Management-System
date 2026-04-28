@@ -85,7 +85,7 @@ namespace DVLD
 
             lblIssueReason.Text = _License.IssueReasonText;
             lblNotes.Text = _License.Notes == "" ? "No Notes" : _License.Notes;
-            // lblIsDetainted.Text = _License.IsDetainted ? "Yes" : "No";
+            lblIsDetainted.Text = _License.IsDetained ? "Yes" : "No";
 
             _LoadPersonImage();
         }

@@ -43,12 +43,12 @@ namespace DVLD_DataAccess
                     IsReleased = (bool)reader["IsReleased"];
 
                     ReleaseDate = reader["ReleaseDate"] == DBNull.Value
-                        ? DateTime.MaxValue
+                        ? DateTime.MinValue
                         : (DateTime)reader["ReleaseDate"];
 
-                    ReleaseByUserID = reader["ReleasedByUserID"] == DBNull.Value
+                    ReleaseByUserID = reader["ReleaseByUserID"] == DBNull.Value
                         ? -1
-                        : (int)reader["ReleasedByUserID"];
+                        : (int)reader["ReleaseByUserID"];
 
                     ReleaseApplicationID = reader["ReleaseApplicationID"] == DBNull.Value
                         ? -1
@@ -109,12 +109,12 @@ namespace DVLD_DataAccess
                     IsReleased = (bool)reader["IsReleased"];
 
                     ReleaseDate = reader["ReleaseDate"] == DBNull.Value
-                        ? DateTime.MaxValue
+                        ? DateTime.MinValue
                         : (DateTime)reader["ReleaseDate"];
 
-                    ReleaseByUserID = reader["ReleasedByUserID"] == DBNull.Value
+                    ReleaseByUserID = reader["ReleaseByUserID"] == DBNull.Value
                         ? -1
-                        : (int)reader["ReleasedByUserID"];
+                        : (int)reader["ReleaseByUserID"];
 
                     ReleaseApplicationID = reader["ReleaseApplicationID"] == DBNull.Value
                         ? -1

@@ -391,8 +391,11 @@ namespace DVLD_Business
 
             Application.ApplicationStatus = clsApplication.enApplicationStatus.Completed;
 
-            Application.PaidFees = clsApplication.Find(
-                (int)clsApplication.enApplicationType.ReleaseDetainedDrivingLicense).PaidFees;
+            Application.PaidFees = clsApplicationType.Find(
+                (int)clsApplication.
+                enApplicationType.
+                ReleaseDetainedDrivingLicense)
+                .ApplicationTypeFees;
 
             Application.CreatedByUserID = ReleasedByUserID;
 

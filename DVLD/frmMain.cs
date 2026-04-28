@@ -3,6 +3,7 @@ using DVLD.Classes;
 using DVLD.Drivers;
 using DVLD.Licenses;
 using DVLD.Licenses.Detain_License;
+using DVLD.Licenses.Release_License;
 using DVLD.Login;
 using DVLD.People;
 using DVLD.Test;
@@ -169,6 +170,11 @@ namespace DVLD
         private void detainLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             OpenForm(new frmDetainLicenseApplication());
+        }
+
+        private void releaseDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenForm(new frmReleaseDetainedLicenseApplication());
         }
     }
 }

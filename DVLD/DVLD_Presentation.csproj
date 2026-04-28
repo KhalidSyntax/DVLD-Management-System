@@ -115,6 +115,12 @@
     <Compile Include="Drivers\frmListDrivers.Designer.cs">
       <DependentUpon>frmListDrivers.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListInternationalLicesnseApplications.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListInternationalLicesnseApplications.Designer.cs">
+      <DependentUpon>frmListInternationalLicesnseApplications.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmNewInternationalLicenseApplication.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Drivers\frmListDrivers.resx">
       <DependentUpon>frmListDrivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListInternationalLicesnseApplications.resx">
+      <DependentUpon>frmListInternationalLicesnseApplications.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmNewInternationalLicenseApplication.resx">
       <DependentUpon>frmNewInternationalLicenseApplication.cs</DependentUpon>
@@ -801,6 +810,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\International 327.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\International 328.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Manage Applications 641.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\License View 326.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PersonLicenseHistory 322.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

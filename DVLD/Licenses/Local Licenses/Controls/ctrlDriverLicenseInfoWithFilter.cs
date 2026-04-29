@@ -37,6 +37,14 @@ namespace DVLD
             InitializeComponent();
         }
 
+        public void ResetControl()
+        {
+            _LicenseID = -1;
+            txtLicenseID.Text = "";
+            ctrlDriverLicenseInfo1.ResetDriverInfo();
+            gbFilters.Enabled = true;
+        }
+
         public void LoadLicenseInfo(int LicenseID)
         {
             txtLicenseID.Text = LicenseID.ToString();

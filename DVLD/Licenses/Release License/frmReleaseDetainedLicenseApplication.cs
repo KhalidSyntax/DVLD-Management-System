@@ -160,9 +160,14 @@ namespace DVLD.Licenses.Release_License
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
 
-                ctrlDriverLicenseInfoWithFilter1.FilterEnabled = false;
+                _SelectedLicenseID = -1;
+
                 btnRelease.Enabled = false;
-                llShowLicenseInfo.Enabled = true;
+                llShowLicenseInfo.Enabled = false;
+                llShowLicensesHistory.Enabled = false;
+
+                ctrlDriverLicenseInfoWithFilter1.ResetControl();
+                ctrlDriverLicenseInfoWithFilter1.SetLicenseIDFocus();
             }
             else
             {

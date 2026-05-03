@@ -76,7 +76,7 @@ namespace DVLD_Business
             Mode = enMode.Update;
         }
 
-        public static clsInternationalLicense Find(int InternationalLicenseID)
+        public static clsInternationalLicense FindByInternationalLicenseID(int InternationalLicenseID)
         {
             int ApplicationID = -1,
             DriverID = -1,

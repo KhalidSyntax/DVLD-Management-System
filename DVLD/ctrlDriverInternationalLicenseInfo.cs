@@ -45,7 +45,7 @@ namespace DVLD
         {
             _InternationalLicenseID = InternationalLicenseID;
             _InternationalLicense =
-                clsInternationalLicense.Find(_InternationalLicenseID);
+                clsInternationalLicense.FindByInternationalLicenseID(_InternationalLicenseID);
 
             if (_InternationalLicense == null)
             {

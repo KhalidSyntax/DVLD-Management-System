@@ -274,7 +274,12 @@ namespace DVLD.People
                     }
                     else
                     {
-                        MessageBox.Show("Error Copying Image File", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show(
+                            "Error Copying Image File",
+                            "Error",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+
                         return false;
                     }
                 }
@@ -311,8 +316,12 @@ namespace DVLD.People
         {
             if (!this.ValidateChildren())
             {
-                MessageBox.Show("Please fix the errors.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "Please fix the errors.",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
                 return;
             }
 

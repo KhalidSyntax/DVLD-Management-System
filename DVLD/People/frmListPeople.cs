@@ -203,8 +203,7 @@ namespace DVLD.People
                         "Person was not deleted because it has data linked to it.",
                         "Delete Failed",
                         MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
+                        MessageBoxIcon.Error);
             }
         }
 

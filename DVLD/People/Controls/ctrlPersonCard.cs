@@ -49,7 +49,12 @@ namespace DVLD
             if (_Person == null)
             {
                 ResetPersonInfo();
-                MessageBox.Show("No Person With PersonID = " + PersonID, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    $"No Person With PersonID =  {PersonID}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
                 return;
             }
             _FillPersonInfo();
@@ -62,7 +67,12 @@ namespace DVLD
             if (_Person == null)
             {
                 ResetPersonInfo();
-                MessageBox.Show("No Person With NationalNo = " + NationalNo, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(
+                    "No Person With NationalNo = {NationalNo}",
+                    "Error",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+
                 return;
             }
             _FillPersonInfo();
@@ -81,7 +91,11 @@ namespace DVLD
                 if (File.Exists(ImagePath))
                     pbPersonImage.ImageLocation = ImagePath;
                 else
-                    MessageBox.Show("Could not find this image: = " + ImagePath, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(
+                        $"Could not find this image: = {ImagePath}",
+                        "Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
             }
         }
 

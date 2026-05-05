@@ -82,8 +82,6 @@ namespace DVLD
                     break;
             }
 
-            //if (OnPersonSelected != null && FilterEnabled)
-            //    OnPersonSelected(ctrlPersonCard1.PersonID);
             if (ctrlPersonCard1.SelectedPersonInfo != null)
                 PersonSelected(ctrlPersonCard1.PersonID);
         }

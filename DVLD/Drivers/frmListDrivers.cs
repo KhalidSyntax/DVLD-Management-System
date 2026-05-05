@@ -64,9 +64,6 @@ namespace DVLD.Drivers
 
         private void txtFilterValue_TextChanged(object sender, EventArgs e)
         {
-            //if (dgvDrivers.Rows.Count <= 0)
-            //    return;
-
             if (_dtAllDrivers == null)
                 return;
 
@@ -75,7 +72,6 @@ namespace DVLD.Drivers
             if (cbFilterBy.SelectedItem == null)
             {
                 _dtAllDrivers.DefaultView.RowFilter = "";
-                //lblRecordsCount.Text = dgvDrivers.Rows.Count.ToString();
                 lblRecordsCount.Text = _dtAllDrivers.DefaultView.Count.ToString();
                 return;
             }
@@ -88,20 +84,6 @@ namespace DVLD.Drivers
                 case "Full Name": FilterColumn = "FullName"; break;
                 default: FilterColumn = "None"; break;
             }
-
-            //if (string.IsNullOrWhiteSpace(txtFilterValue.Text) || FilterColumn == "None")
-            //{
-            //    _dtAllDrivers.DefaultView.RowFilter = "";
-            //    lblRecordsCount.Text = dgvDrivers.Rows.Count.ToString();
-            //    return;
-            //}
-
-            //if (FilterColumn == "DriverID" || FilterColumn == "PersonID")
-            //    _dtAllDrivers.DefaultView.RowFilter = string.Format("[{0}] = {1}", FilterColumn, txtFilterValue.Text);
-            //else
-            //    _dtAllDrivers.DefaultView.RowFilter = string.Format("[{0}] like '{1}%'", FilterColumn, txtFilterValue.Text);
-
-            //lblRecordsCount.Text = dgvDrivers.Rows.Count.ToString();
 
             string filter = "";
 
@@ -128,7 +110,6 @@ namespace DVLD.Drivers
                 txtFilterValue.Focus();
             }
 
-            // lblRecordsCount.Text = dgvDrivers.Rows.Count.ToString();
             lblRecordsCount.Text = _dtAllDrivers.DefaultView.Count.ToString();
         }
 

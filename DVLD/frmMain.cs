@@ -18,6 +18,8 @@ namespace DVLD
     public partial class frmMain : Form
     {
         frmLogin _frmLogin;
+        bool _SignOut = false;
+
         public frmMain(frmLogin login)
         {
             InitializeComponent();
@@ -113,6 +115,7 @@ namespace DVLD
 
         private void signOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            _SignOut = true;
             clsGlobal.currentUser = null;
             _frmLogin.Show();
             this.Close();
@@ -120,7 +123,8 @@ namespace DVLD
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            Application.Exit();
+            if (!_SignOut)
+                Application.Exit();
         }
 
         private void manageApplicationTypeToolStripMenuItem_Click(object sender, EventArgs e)

@@ -75,28 +75,6 @@ namespace DVLD
             dgvInternationalLicensesHistory.DefaultCellStyle.Font =
                 new Font("Segoe UI", 11, FontStyle.Regular);
 
-            //if (dgvInternationalLicensesHistory.Rows.Count > 0)
-            //{
-            //    dgvInternationalLicensesHistory.Columns[0].HeaderText = "International License ID";
-            //    dgvInternationalLicensesHistory.Columns[0].Width = 170;
-
-            //    dgvInternationalLicensesHistory.Columns[1].HeaderText = "Application ID";
-            //    dgvInternationalLicensesHistory.Columns[1].Width = 120;
-
-            //    dgvInternationalLicensesHistory.Columns[2].HeaderText = "Local License ID";
-            //    dgvInternationalLicensesHistory.Columns[2].Width = 150;
-
-            //    dgvInternationalLicensesHistory.Columns[3].HeaderText = "Issue Date";
-            //    dgvInternationalLicensesHistory.Columns[3].Width = 150;
-
-            //    dgvInternationalLicensesHistory.Columns[4].HeaderText = "Expiration Date";
-            //    dgvInternationalLicensesHistory.Columns[4].Width = 150;
-
-            //    dgvInternationalLicensesHistory.Columns[5].HeaderText = "Is Active";
-            //    dgvInternationalLicensesHistory.Columns[5].Width = 120;
-            //}
-
-
             dgvInternationalLicensesHistory.DataBindingComplete += (s, e) =>
             {
                 if (dgvInternationalLicensesHistory.Columns.Count == 0)
@@ -120,11 +98,9 @@ namespace DVLD
                 dgvInternationalLicensesHistory.Columns[5].HeaderText = "Is Active";
                 dgvInternationalLicensesHistory.Columns[5].Width = 120;
             };
-
-
         }
 
-        public void LoadInfo(int driverID)
+        public void LoadInfoByDriverID(int driverID)
         {
             _DriverID = driverID;
             _Driver = clsDriver.FindByDriverID(_DriverID);

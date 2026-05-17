@@ -51,7 +51,7 @@ namespace DVLD.Login
                 if (chkRememberMe.Checked)
                     clsGlobal.RememberUsernameAndPassword(userName, password);
                 else
-                    clsGlobal.RememberUsernameAndPassword("", "");
+                    clsGlobal.ClearStoredCredential();
 
                 MessageBox.Show(
                     "Login successful!\n" +

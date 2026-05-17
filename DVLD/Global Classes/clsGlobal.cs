@@ -1,38 +1,54 @@
 ﻿using System;
-using System.IO;
 using DVLD_Business;
 using System.Windows.Forms;
+using Microsoft.Win32; 
 
 namespace DVLD.Classes
 {
     internal static class clsGlobal
     {
         public static clsUser currentUser;
+        private static string keyPath = @"HKEY_CURRENT_USER\Software\DVLD\Login";
+
+        public static bool ClearStoredCredential()
+        {
+            try
+            {
+                Registry.SetValue(keyPath, "UserName", "");
+                Registry.SetValue(keyPath, "Password", "");
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred: {ex.Message}");
+                return false;
+            }
+        }
+
+        private static string EncryptPassword(string password)
+        {
+            return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(password));
+        }
+
+        private static string DecryptPassword(string encryptedPassword)
+        {
+            return System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(encryptedPassword));
+        }
 
         public static bool RememberUsernameAndPassword(string userName, string password)
         {
             try
             {
-                string currentDirectory = System.IO.Directory.GetCurrentDirectory();
-                string filePath = currentDirectory + "\\data.txt";
+                string valueUserName = userName;
+                string valuePasswordData = EncryptPassword(password);
 
-                if (string.IsNullOrEmpty(userName))
-                {
-                    if (File.Exists(filePath))
-                        File.Delete(filePath);
+                Registry.SetValue(keyPath, "UserName", valueUserName, RegistryValueKind.String);
+                Registry.SetValue(keyPath, "Password", valuePasswordData, RegistryValueKind.String);
 
-                    return true;
-                }
-
-                string dataToSave = userName + "#//#" + password;
-
-                using (StreamWriter writer = new StreamWriter(filePath))
-                {
-                    writer.WriteLine(dataToSave);
-                    return true;
-                }
+                return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
                 return false;
@@ -43,31 +59,19 @@ namespace DVLD.Classes
         {
             try
             {
-                string currentDirectory = System.IO.Directory.GetCurrentDirectory();
-                string filePath = currentDirectory + "\\data.txt";
+                string storedUserName = Registry.GetValue(keyPath, "UserName", null) as string;
+                string storedPassword = Registry.GetValue(keyPath, "Password", null) as string;
 
-                if (File.Exists(filePath))
+                if (storedUserName != null && storedPassword != null)
                 {
-                    using (StreamReader reader = new StreamReader(filePath))
-                    {
-                        string line = reader.ReadLine();
-
-                        if (line != null)
-                        {
-                            string[] result = line.Split(new string[] { "#//#" }, StringSplitOptions.None);
-
-                            if (result.Length == 2 && !string.IsNullOrEmpty(result[0]))
-                            {
-                                userName = result[0];
-                                password = result[1];
-                                return true;
-                            }
-                        }
-                    }
+                    userName = storedUserName;
+                    password = DecryptPassword(storedPassword);
+                    return true;
                 }
                 return false;
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"An error occurred: {ex.Message}");
                 return false;

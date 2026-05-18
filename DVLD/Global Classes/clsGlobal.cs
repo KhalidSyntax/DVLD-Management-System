@@ -1,7 +1,8 @@
-﻿using System;
-using DVLD_Business;
-using System.Windows.Forms;
+﻿using DVLD_Business;
 using Microsoft.Win32; 
+using System;
+using System.Windows.Forms;
+using DVLD.Common;
 
 namespace DVLD.Classes
 {
@@ -21,7 +22,7 @@ namespace DVLD.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}");
+                Logger.LogError(ex.ToString());
                 return false;
             }
         }
@@ -50,7 +51,7 @@ namespace DVLD.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}");
+                Logger.LogError(ex.ToString());
                 return false;
             }
         }
@@ -73,7 +74,7 @@ namespace DVLD.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"An error occurred: {ex.Message}");
+                Logger.LogError(ex.ToString());
                 return false;
             }
         }

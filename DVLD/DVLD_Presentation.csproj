@@ -590,6 +590,10 @@
     <None Include="Resources\sign_out 32 -2.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DVLD.Common\DVLD.Common.csproj">
+      <Project>{fe6fec07-4322-4f11-922f-7aaeaaafb379}</Project>
+      <Name>DVLD.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DVLD_Business\DVLD_Business.csproj">
       <Project>{6626184b-c746-4879-a176-5e4fcb21e702}</Project>
       <Name>DVLD_Business</Name>

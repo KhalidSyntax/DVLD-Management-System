@@ -58,6 +58,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DVLD.Common\DVLD.Common.csproj">
+      <Project>{fe6fec07-4322-4f11-922f-7aaeaaafb379}</Project>
+      <Name>DVLD.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DVLD_DataAccess\DVLD_DataAccess.csproj">
       <Project>{3dc6fd0b-4a4c-48e6-a1fb-8021afe4502d}</Project>
       <Name>DVLD_DataAccess</Name>

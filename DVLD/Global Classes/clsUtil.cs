@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLD.Common;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -22,7 +23,7 @@ namespace DVLD.Classes
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Error creating folder: " + ex.Message);
+                    Logger.LogError(ex.ToString());
                     return false;
                 }
             }
@@ -52,7 +53,7 @@ namespace DVLD.Classes
             }
             catch(IOException iox)
             {
-                MessageBox.Show(iox.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Logger.LogError(iox.ToString());
             }
 
             sourceFile = destinationFile;

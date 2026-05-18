@@ -1,10 +1,11 @@
-﻿using System;
-using System.Data;
-using System.Windows.Forms;
-using System.ComponentModel;
-using System.IO;
+﻿using DVLD.Classes;
+using DVLD.Common;
 using DVLD_Business;
-using DVLD.Classes;
+using System;
+using System.ComponentModel;
+using System.Data;
+using System.IO;
+using System.Windows.Forms;
 
 namespace DVLD.People
 {
@@ -257,9 +258,9 @@ namespace DVLD.People
                     {
                         File.Delete(_Person.ImagePath);
                     }
-                    catch(IOException)
+                    catch(IOException iox)
                     {
-
+                        Logger.LogError(iox.ToString());
                     }
                 }
 

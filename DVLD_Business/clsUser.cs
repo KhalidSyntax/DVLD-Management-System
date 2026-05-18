@@ -13,7 +13,7 @@ namespace DVLD_Business
         public int PersonID { get; set; }
         public string UserName { get; set; }
 
-        public string Password;
+        public string Password { get; set; }
         public bool IsActive { get; set; }
 
         private clsPerson _PersonInfo;
@@ -74,11 +74,20 @@ namespace DVLD_Business
 
         public static clsUser FindByUsernameAndPassword(string UserName, string Password)
         {
+            string hashedPassword = clsComputeHash.ComputeHash(Password);
+
             int UserID = -1, PersonID = -1;
             bool IsActive = false;
 
-            if (clsUserDataAccess.GetUserInfoByUsernameAndPassword(UserName, Password, ref UserID, ref PersonID, ref IsActive))
-                return new clsUser(UserID, PersonID, UserName, Password, IsActive);
+            if (clsUserDataAccess.GetUserInfoByUsernameAndPassword(
+                UserName,
+                hashedPassword,
+                ref UserID,
+                ref PersonID,
+                ref IsActive))
+            {
+                return new clsUser(UserID, PersonID, UserName, hashedPassword, IsActive);
+            }
             else
                 return null;
         }
@@ -88,10 +97,12 @@ namespace DVLD_Business
             if (clsUserDataAccess.IsUserExistForPersonID(this.PersonID))
                 return false;
 
+            string hashedPassword = clsComputeHash.ComputeHash(this.Password);
+
             this.UserID = clsUserDataAccess.AddNewUser(
                 this.PersonID,
                 this.UserName,
-                this.Password,
+                hashedPassword,
                 this.IsActive);
 
             return (this.UserID != -1);
@@ -99,11 +110,13 @@ namespace DVLD_Business
 
         private bool _UpdateUser()
         {
+            string hashedPassword = clsComputeHash.ComputeHash(this.Password);
+
             return clsUserDataAccess.UpdateUser(
                 this.UserID,
                 this.PersonID,
                 this.UserName,
-                this.Password,
+                hashedPassword,
                 this.IsActive);
         }
 
@@ -112,9 +125,11 @@ namespace DVLD_Business
             if (string.IsNullOrWhiteSpace(NewPassword))
                 return false;
 
-            if (clsUserDataAccess.ChangePassword(this.UserID, NewPassword))
+            string hashedPassword = clsComputeHash.ComputeHash(NewPassword);
+
+            if (clsUserDataAccess.ChangePassword(this.UserID, hashedPassword))
             {
-                this.Password = NewPassword;
+                this.Password = hashedPassword;
                 return true;
             }
             return false;

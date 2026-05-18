@@ -27,22 +27,12 @@ namespace DVLD.Classes
             }
         }
 
-        private static string EncryptPassword(string password)
-        {
-            return Convert.ToBase64String(System.Text.Encoding.UTF8.GetBytes(password));
-        }
-
-        private static string DecryptPassword(string encryptedPassword)
-        {
-            return System.Text.Encoding.UTF8.GetString(Convert.FromBase64String(encryptedPassword));
-        }
-
         public static bool RememberUsernameAndPassword(string userName, string password)
         {
             try
             {
                 string valueUserName = userName;
-                string valuePasswordData = EncryptPassword(password);
+                string valuePasswordData = password;
 
                 Registry.SetValue(keyPath, "UserName", valueUserName, RegistryValueKind.String);
                 Registry.SetValue(keyPath, "Password", valuePasswordData, RegistryValueKind.String);
@@ -66,7 +56,7 @@ namespace DVLD.Classes
                 if (storedUserName != null && storedPassword != null)
                 {
                     userName = storedUserName;
-                    password = DecryptPassword(storedPassword);
+                    password = storedPassword;
                     return true;
                 }
                 return false;

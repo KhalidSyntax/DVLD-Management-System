@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using DVLD.Common;
 
 namespace DVLD_DataAccess
 {
@@ -53,7 +54,7 @@ namespace DVLD_DataAccess
             }
             catch(Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 isFound = false;
             }
             finally
@@ -110,7 +111,7 @@ namespace DVLD_DataAccess
             }
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 isFound = false;
             }
             finally
@@ -176,7 +177,7 @@ namespace DVLD_DataAccess
             }
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -240,7 +241,7 @@ namespace DVLD_DataAccess
             }
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 rowAffected = 0;
             }
             finally
@@ -282,7 +283,7 @@ namespace DVLD_DataAccess
             }
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -309,7 +310,7 @@ namespace DVLD_DataAccess
             }
             catch(Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -338,7 +339,7 @@ namespace DVLD_DataAccess
             }
             catch(Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 isFound = false;
             }
             finally
@@ -368,7 +369,7 @@ namespace DVLD_DataAccess
             }
             catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 isFound = false;
             }
             finally

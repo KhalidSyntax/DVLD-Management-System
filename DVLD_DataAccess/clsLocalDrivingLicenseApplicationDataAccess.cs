@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using DVLD.Common;
 
 namespace DVLD_DataAccess
 {
@@ -36,9 +37,9 @@ namespace DVLD_DataAccess
 
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 isFound = false;
             }
             finally
@@ -79,9 +80,9 @@ namespace DVLD_DataAccess
 
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 isFound = false;
             }
             finally
@@ -120,9 +121,9 @@ namespace DVLD_DataAccess
                     LocalDrivingLicenseApplicationID = insertedID;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -157,9 +158,9 @@ namespace DVLD_DataAccess
                 connection.Open();
                 rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 return false;
             }
             finally
@@ -186,9 +187,9 @@ namespace DVLD_DataAccess
                 connection.Open();
                 rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -221,9 +222,9 @@ namespace DVLD_DataAccess
 
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -265,9 +266,9 @@ namespace DVLD_DataAccess
                     Result = returnedResult;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 Result = false;
             }
             finally
@@ -310,9 +311,9 @@ namespace DVLD_DataAccess
                     isFound = true;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 isFound = false;
             }
             finally
@@ -354,9 +355,9 @@ namespace DVLD_DataAccess
                     TotalTrialsPerTest = Trials;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -392,10 +393,10 @@ namespace DVLD_DataAccess
                 if (value != null)
                     Result = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 Result = false;
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -433,9 +434,9 @@ namespace DVLD_DataAccess
                     result = dt;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {

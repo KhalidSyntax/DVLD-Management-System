@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using DVLD.Common;
 
 namespace DVLD_DataAccess
 {
@@ -59,10 +60,10 @@ namespace DVLD_DataAccess
 
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 isFound = false;
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -125,10 +126,10 @@ namespace DVLD_DataAccess
 
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 isFound = false;
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -171,9 +172,9 @@ namespace DVLD_DataAccess
                     DetainID = insertedID;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -213,9 +214,9 @@ namespace DVLD_DataAccess
                 connection.Open();
                 rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 return false;
             }
             finally
@@ -253,9 +254,9 @@ namespace DVLD_DataAccess
                 connection.Open();
                 rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 return false;
             }
             finally
@@ -283,9 +284,9 @@ namespace DVLD_DataAccess
 
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -316,10 +317,10 @@ namespace DVLD_DataAccess
                     IsDetained = true;
 
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 IsDetained = false;
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {

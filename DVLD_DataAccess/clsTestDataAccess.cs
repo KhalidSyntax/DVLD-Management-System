@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using DVLD.Common;
 
 namespace DVLD_DataAccess
 {
@@ -44,9 +45,9 @@ namespace DVLD_DataAccess
                 }
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 isFound = false;
             }
             finally
@@ -120,9 +121,9 @@ namespace DVLD_DataAccess
 
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 isFound = false;
             }
             finally
@@ -176,9 +177,9 @@ namespace DVLD_DataAccess
                     TestID = insertedID;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -223,9 +224,9 @@ namespace DVLD_DataAccess
                 connection.Open();
                 rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 return false;
             }
             finally
@@ -252,9 +253,9 @@ namespace DVLD_DataAccess
                 connection.Open();
                 rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -293,9 +294,9 @@ namespace DVLD_DataAccess
                     PassedTests = Trials;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -325,9 +326,9 @@ namespace DVLD_DataAccess
 
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {

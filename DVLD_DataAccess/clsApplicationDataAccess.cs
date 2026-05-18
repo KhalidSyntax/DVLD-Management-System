@@ -155,9 +155,9 @@ namespace DVLD_DataAccess
                 connection.Open();
                 rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 return false;
             }
             finally
@@ -184,9 +184,9 @@ namespace DVLD_DataAccess
                 connection.Open();
                 rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -219,9 +219,9 @@ namespace DVLD_DataAccess
 
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -252,9 +252,9 @@ namespace DVLD_DataAccess
 
                 reader.Close();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 isFound = false;
             }
             finally
@@ -299,9 +299,9 @@ namespace DVLD_DataAccess
                     ActiveApplicationID = AppID;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -345,9 +345,9 @@ namespace DVLD_DataAccess
                     ActiveApplicationID = AppID;
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
             }
             finally
             {
@@ -379,9 +379,9 @@ namespace DVLD_DataAccess
                 connection.Open();
                 rowsAffected = command.ExecuteNonQuery();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                // Console.WriteLine("Error: " + ex.Message);
+                Logger.LogError(ex.ToString());
                 return false;
             }
             finally

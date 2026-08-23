@@ -187,8 +187,6 @@ This project helped strengthen practical experience in:
 
 ## Author
 
-### Khalid Alharbi
-
 GitHub:
 https://github.com/KhalidSyntax
 
